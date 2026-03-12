@@ -105,11 +105,11 @@ export default function WhoWeAre() {
           className="w-full lg:w-1/2 relative h-[300px] sm:h-[350px] md:h-[450px] flex items-center justify-center"
         >
           {/* Subtle frame behind image */}
-          <div className="absolute inset-[-10px] sm:inset-[-20px] border border-white/5 rounded-3xl" />
+          <div className="absolute border border-white   rounded-2xl" />
           
           <div className="relative w-full h-full drop-shadow-2xl">
             <Image
-              src="/salt_mine.png"
+              src="/who-we-are.jpg"
               alt="Himalayan Salt Mine Interior"
               fill
               className="object-cover object-center rounded-2xl"

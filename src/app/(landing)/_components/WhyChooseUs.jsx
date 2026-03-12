@@ -12,13 +12,13 @@ const features = [
     num: "01",
     label: "Expertise",
     text: "Decades of expertise in Himalayan mineral extraction.",
-    image: "/expertise_salt.png",
+    image: "/expertise.jpg",
   },
   {
     num: "02",
     label: "Quality",
     text: "Strict quality control and grading for global standards.",
-    image: "/quality_salt.png",
+    image: "/quality.jpg",
   },
   {
     num: "03",

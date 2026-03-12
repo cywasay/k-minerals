@@ -18,12 +18,11 @@ export default function AboutLegacy() {
            whileInView={{ opacity: 1, x: 0 }}
            viewport={vp}
            transition={smooth}
-           className="w-full lg:w-1/2 relative h-[300px] sm:h-[380px] md:h-[480px]"
+           className="w-full lg:w-1/2 relative h-auto aspect-[4/3] sm:aspect-video lg:aspect-[4/3]"
         >
-          <div className="absolute inset-0 border border-white/10 rounded-3xl translate-x-4 translate-y-4 -z-10" />
           <div className="relative w-full h-full overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src="/who-we-are.jpg"
+              src="/our-heritage.jpg"
               alt="Kohistan Mountains"
               fill
               className="object-cover"

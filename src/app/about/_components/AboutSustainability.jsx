@@ -19,15 +19,15 @@ export default function AboutSustainability() {
            whileInView={{ opacity: 1, scale: 1 }}
            viewport={vp}
            transition={{ ...smooth, duration: 1.2 }}
-           className="w-full lg:w-1/2 relative h-[300px] sm:h-[380px] md:h-[480px]"
+           className="w-full lg:w-1/2 relative h-auto aspect-[4/3] sm:aspect-video lg:aspect-[4/3]"
         >
           <div className="absolute inset-0 bg-[#CC7778]/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="relative w-full h-full overflow-hidden rounded-[40px] shadow-2xl">
             <Image
-              src="/red-salt-crystal.png"
+              src="/sustainability.jpg"
               alt="Sustainability in Kohistan"
               fill
-              className="object-contain p-12"
+              className="object-cover"
             />
           </div>
         </motion.div>

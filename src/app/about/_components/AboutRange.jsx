@@ -16,7 +16,7 @@ const categories = [
   {
     title: "Wellness Minerals",
     desc: "Premium bath salts, natural salt lamps, and detoxifying spa products designed for ultimate relaxation and wellbeing.",
-    image: "/about-minerals.png"
+    image: "/wellness.png"
   },
   {
     title: "Animal Nutrition",

@@ -11,14 +11,14 @@ const sections = [
     id: "02",
     title: "RAW MINERAL EXTRACTION",
     desc: "Nestled in the mountains of Kohistan, Kohistan Minerals carefully extracts these natural reserves to preserve their exceptional purity and strength. Every raw material is sourced with precision to supply industries worldwide, from manufacturing and food production to wellness and agriculture.",
-    image: "/hero-salt.png",
+    image: "/raw.png",
     imageSide: "right",
   },
   {
     id: "03",
     title: "PRODUCT GRADING & APPLICATION",
     desc: "Once extracted, Kohistan Minerals sorts and grades each mineral according to its intended use. From industrial processing and culinary products to wellness items and architectural features, every shipment meets strict quality standards. This structured approach ensures consistency, versatility, and global readiness across all product categories.",
-    image: "/red-salt.png",
+    image: "/refined.png",
     imageSide: "left",
   },
 ];

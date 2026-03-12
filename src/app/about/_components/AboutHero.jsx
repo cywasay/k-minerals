@@ -21,7 +21,7 @@ export default function AboutHero() {
             <span className="text-[#CC7778] uppercase tracking-[0.4em] text-xs sm:text-sm font-semibold mb-6 block">
               About Kohistan Minerals
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-bold tracking-tight mb-8 leading-[0.9]">
+            <h1 className="text-4xl sm:text-6xl text-white font-bold tracking-tight mb-8 leading-[0.9]">
               From the Peaks of Kohistan to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#CC7778]/80">
                 Global Excellence
@@ -33,7 +33,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...smooth, delay: 0.2 }}
-            className="text-[#a1a1aa] text-lg sm:text-xl md:text-2xl font-light leading-relaxed max-w-3xl"
+            className="text-[#a1a1aa] text-xl font-light leading-relaxed max-w-3xl"
           >
             Kohistan Minerals comes from the pristine Kohistan mountains, where
             centuries-old formations create minerals of unmatched purity. We deliver

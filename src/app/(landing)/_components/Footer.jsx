@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <h4 className="text-white font-semibold uppercase tracking-widest text-xs">Quick Links</h4>
             <ul className="flex flex-col gap-3">
-              {["Specialties", "Process", "Highlights", "Global Network", "Our Story"].map((link) => (
+              {["Specialties", "Process", "Highlights", "Global Network"].map((link) => (
                 <li key={link}>
                   <Link 
                     href="#" 
@@ -39,6 +39,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link 
+                  href="/about" 
+                  className="text-white/40 hover:text-[#CC7778] transition-colors text-sm font-light"
+                >
+                  Our Story
+                </Link>
+              </li>
             </ul>
           </div>
 

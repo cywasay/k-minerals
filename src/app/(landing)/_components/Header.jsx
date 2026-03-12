@@ -48,7 +48,7 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              href="#about" 
+              href="/about" 
               className="text-white/70 hover:text-[#CC7778] uppercase tracking-widest text-[10px] sm:text-xs font-medium transition-colors duration-300"
             >
               About Us

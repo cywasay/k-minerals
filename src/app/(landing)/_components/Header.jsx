@@ -26,7 +26,7 @@ export default function Header() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20 sm:h-24 md:h-28">
         {/* Logo Section */}
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 group transition-transform duration-300 hover:scale-105">
           <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24">
             <Image 
               src="/logo.png" 
@@ -36,7 +36,7 @@ export default function Header() {
               priority
             />
           </div>
-        </div>
+        </Link>
         
         {/* Navigation Links + Button */}
         <div className="flex items-center gap-4 sm:gap-8 md:gap-10">
@@ -53,13 +53,21 @@ export default function Header() {
             >
               About Us
             </Link>
+            <Link 
+              href="/contact" 
+              className="text-white/70 hover:text-[#CC7778] uppercase tracking-widest text-[10px] sm:text-xs font-medium transition-colors duration-300"
+            >
+              Contact
+            </Link>
           </div>
 
-          <Button 
-            className="!px-4 !py-2 !text-[10px] sm:!px-6 sm:!py-2.5 sm:!text-xs"
-          >
-            Inquire Now
-          </Button>
+          <Link href="/contact">
+            <Button 
+              className="!px-4 !py-2 !text-[10px] sm:!px-6 sm:!py-2.5 sm:!text-xs"
+            >
+              Inquire Now
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>

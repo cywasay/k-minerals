@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 
 const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.8 };
@@ -121,9 +122,11 @@ export default function WhyChooseUs() {
           viewport={vp}
           transition={{ ...smooth, delay: 0.2 }}
         >
-          <Button>
-            Discover Our Difference
-          </Button>
+          <Link href="/about">
+            <Button>
+              Discover Our Differences
+            </Button>
+          </Link>
         </motion.div>
         
       </div>

@@ -53,10 +53,6 @@ export default function Processes() {
                 className={`w-full md:w-1/2 flex flex-col gap-4 sm:gap-6 justify-center will-change-transform ${isLeft ? "md:order-2 md:pl-10 lg:pl-16" : "md:order-1"}`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-white opacity-50 text-lg sm:text-xl md:text-2xl font-light tracking-widest font-mono">
-                    #{section.id}
-                  </span>
-                  <div className="h-[1px] w-4 bg-white opacity-50" />
                   <h2 className="text-white text-xl sm:text-2xl font-semibold tracking-wide uppercase">
                     {section.title}
                   </h2>

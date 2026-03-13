@@ -8,27 +8,36 @@ const vp = { once: true, amount: 0.2 };
 
 export default function Intro() {
   return (
-    <section className="relative w-full py-12 sm:py-0 flex items-center overflow-visible">
-      {/* Background soft glow */}
-      <div className="absolute inset-0 z-0 flex justify-end items-center pointer-events-none">
-        <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-[#CC7778]/20 rounded-full blur-[100px] sm:blur-[140px] translate-x-1/4" />
+    <section className="relative w-full pt-32 pb-24 sm:pt-48 sm:pb-32 md:pt-64 md:pb-48 flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/intro-bg.jpg"
+          alt="Mountain Origin Extraction"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Overlay for readability and blending with the rest of the site */}
+        <div className="absolute inset-0 bg-[#060608]/40" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to bottom, #060608 0%, transparent 20%, transparent 80%, #060608 100%)"
+          }}
+        />
       </div>
 
-      <div className="flex flex-col md:flex-row gap-10 md:gap-6 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-        {/* Left Side: Text Content — single parent animation drives children */}
+      <div className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto px-4 sm:px-6 w-full text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={vp}
           transition={{ ...smooth }}
-          className="w-full md:w-1/2 flex flex-col gap-4 sm:gap-6 justify-center will-change-transform"
+          className="w-full flex flex-col items-center gap-6 sm:gap-8 justify-center will-change-transform"
         >
-          <div className="flex items-center gap-2">
-            <span className="text-white opacity-50 text-lg sm:text-xl md:text-2xl font-light tracking-widest font-mono">
-              #01
-            </span>
-            <div className="h-[1px] w-4 bg-white opacity-50" />
-            <h2 className="text-white text-xl sm:text-2xl font-semibold tracking-wide uppercase">
+          <div className="flex items-center gap-4">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide uppercase">
               MOUNTAIN ORIGIN
             </h2>
           </div>
@@ -38,7 +47,7 @@ export default function Intro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={vp}
             transition={{ ...smooth, delay: 0.15 }}
-            className="text-[#a1a1aa] text-sm sm:text-base leading-[1.5] sm:leading-[1.4] font-light max-w-lg will-change-transform"
+            className="text-[#a1a1aa] text-base sm:text-lg md:text-xl leading-relaxed sm:leading-[1.6] font-light max-w-3xl will-change-transform"
           >
             Formed within the rugged mountain ranges of Kohistan, Kohistan
             Minerals’ deposits carry the strength and purity of natural
@@ -47,25 +56,6 @@ export default function Intro() {
             origin while meeting the demands of modern industry and global
             trade.
           </motion.p>
-        </motion.div>
-
-        {/* Right Side: Image — translate + opacity only */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={vp}
-          transition={{ ...smooth, duration: 1, delay: 0.1 }}
-          className="w-full md:w-1/2 will-change-transform"
-        >
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] mx-auto mt-4 md:mt-0">
-            <Image
-              src="/red-salt.png"
-              alt="Asteroid Specimen"
-              fill
-              className="object-contain object-center md:object-right drop-shadow-2xl scale-100 sm:scale-110 md:scale-125 lg:scale-[1.35]"
-              priority
-            />
-          </div>
         </motion.div>
       </div>
     </section>

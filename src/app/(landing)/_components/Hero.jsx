@@ -8,7 +8,7 @@ const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.9 };
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-40 md:pb-32 overflow-hidden flex flex-col justify-center min-h-[85vh] sm:min-h-[90vh]">
+    <section className="relative pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-40 md:pb-32 overflow-hidden flex flex-col justify-center min-h-screen">
       {/* Background Ambient Blobs */}
       <div className="absolute top-[10%] right-[5%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-[#CC7778]/40 rounded-full blur-[60px] sm:blur-[80px] md:blur-[140px] pointer-events-none z-0 translate-x-1/4 -translate-y-1/4 opacity-50" />
       <div className="absolute bottom-[5%] left-[5%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-[#CC7778]/30 rounded-full blur-[60px] sm:blur-[80px] md:blur-[140px] pointer-events-none z-0 -translate-x-1/4 translate-y-1/4 opacity-30" />

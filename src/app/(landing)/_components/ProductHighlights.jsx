@@ -5,30 +5,61 @@ import { motion } from "motion/react";
 const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.8 };
 const vp = { once: true, amount: 0.2 };
 
+// Icon Components
+const FactoryIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H2v18Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg>
+);
+
+const UtensilsIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+);
+
+const ChefHatIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 13.8a4.41 4.41 0 1 1 2-8.7 5 5 0 1 1 8 0 4.41 4.41 0 1 1 2 8.7V20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2Z"/><path d="M6 17h12"/></svg>
+);
+
+const SparklesIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+);
+
+const LayoutGridIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+);
+
+const PawPrintIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><circle cx="9" cy="16" r="2"/><path d="M9 16c-1.1 0-2 .9-2 2 0 1.2.9 2.1 2.1 2.2a21 21 0 0 1 4.7 0c1.2 0 2.2-.9 2.2-2.1 0-1.1-.9-2.1-2.1-2.1H9Z"/></svg>
+);
+
 const highlights = [
   {
     title: "Industrial Salt",
     description: "Bulk Himalayan salt supplied for chemical processing, tanning, and industrial manufacturing.",
+    icon: <FactoryIcon />,
   },
   {
     title: "Edible Salt",
     description: "Food-grade Himalayan pink salt available in fine, coarse, and crystal grades.",
+    icon: <UtensilsIcon />,
   },
   {
     title: "Culinary Salt Products",
     description: "Cooking slabs, salt bowls, and kitchen products used by chefs and hospitality brands.",
+    icon: <ChefHatIcon />,
   },
   {
     title: "Wellness Salt Products",
     description: "Salt lamps, bath salt, and spa products designed for wellness environments.",
+    icon: <SparklesIcon />,
   },
   {
     title: "Salt Tiles & Bricks",
     description: "Natural Himalayan salt blocks used for interior design, spa rooms, and salt walls.",
+    icon: <LayoutGridIcon />,
   },
   {
     title: "Animal Salt Licks",
     description: "Natural mineral salt blocks used for livestock nutrition and agricultural use.",
+    icon: <PawPrintIcon />,
   },
 ];
 
@@ -78,11 +109,11 @@ export default function ProductHighlights() {
               {/* Internal Card Glow on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
 
-              {/* Numbering + Accent Line */}
+              {/* Icon + Accent Line */}
               <div className="flex items-center justify-between mb-4 sm:mb-10">
-                <span className="text-white/20 font-mono text-base sm:text-xl font-light tracking-widest group-hover:text-[#CC7778]/80 transition-colors duration-500">
-                  0{idx + 1}
-                </span>
+                <div className="text-white/40 group-hover:text-[#CC7778] transition-colors duration-500">
+                  {item.icon}
+                </div>
                 <div className="h-[1px] w-8 sm:w-12 bg-white/10 group-hover:bg-[#CC7778]/40 transition-colors duration-500" />
               </div>
 

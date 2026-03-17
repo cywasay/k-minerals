@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
 
@@ -98,7 +99,9 @@ export default function AboutRange() {
         </div>
 
         <div className="flex justify-center">
-          <Button className="!px-10 !py-4 !text-sm">Explore Our Full Range</Button>
+          <Link href="/contact">
+            <Button className="!px-10 !py-4 !text-sm">Explore Our Full Range</Button>
+          </Link>
         </div>
       </div>
     </section>

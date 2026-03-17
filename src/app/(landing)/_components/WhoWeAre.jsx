@@ -91,7 +91,7 @@ export default function WhoWeAre() {
             viewport={vp}
             transition={{ ...smooth, delay: 0.6 }}
           >
-            <Link href="/about">
+            <Link href="/contact">
               <Button>
                 Explore Our Story
               </Button>

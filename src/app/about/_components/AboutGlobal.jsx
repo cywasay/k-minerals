@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 
 const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.8 };
@@ -27,7 +28,9 @@ export default function AboutGlobal() {
             With a reputation for reliability and excellence, Kohistan Minerals serves clients across the globe. Every shipment is rigorously tested, carefully graded, and traceable. Whether for culinary, wellness, agricultural, or industrial use, our products arrive in perfect condition, maintaining the trust of clients worldwide.
           </p>
 
-          <Button>Contact Us for International Supply</Button>
+          <Link href="/contact">
+            <Button>Contact Us for International Supply</Button>
+          </Link>
         </motion.div>
       </div>
     </section>

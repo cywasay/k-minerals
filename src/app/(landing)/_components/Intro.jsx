@@ -19,7 +19,7 @@ export default function Intro() {
           priority
         />
         {/* Overlay for readability and blending with the rest of the site */}
-        <div className="absolute inset-0 bg-[#060608]/40" />
+        <div className="absolute inset-0 bg-[#060608]/70" />
         <div
           className="absolute inset-0"
           style={{
@@ -47,7 +47,7 @@ export default function Intro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={vp}
             transition={{ ...smooth, delay: 0.15 }}
-            className="text-[#a1a1aa] text-base sm:text-lg md:text-xl leading-relaxed sm:leading-[1.6] font-light max-w-3xl will-change-transform"
+            className="text-slate-200 text-base sm:text-lg md:text-xl leading-relaxed sm:leading-[1.6] font-light max-w-3xl will-change-transform"
           >
             Formed within the rugged mountain ranges of Kohistan, Kohistan
             Minerals’ deposits carry the strength and purity of natural

@@ -25,6 +25,10 @@ const values = [
   {
     title: "Global Vision",
     desc: "Bringing Kohistan’s natural treasures to clients across the globe."
+  },
+  {
+    title: "Integrity & Transparency",
+    desc: "Operating with complete openness and maintaining the highest ethical standards in every transaction."
   }
 ];
 

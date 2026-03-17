@@ -19,7 +19,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ ...smooth, duration: 1.4, delay: 0.9 }}
-          className="relative w-full md:w-[60%] lg:w-[60%] h-[90vh] lg:h-[95vh] -ml-12 lg:-ml-20 mt-0 flex items-center justify-center will-change-[transform,opacity]"
+          className="relative w-full md:w-[60%] lg:w-[60%] h-[85vh] lg:h-[90vh] -ml-12 lg:-ml-20 mt-0 flex items-center justify-center will-change-[transform,opacity]"
         >
           <Image
             src="/hero-salt.png"
@@ -33,17 +33,9 @@ export default function Hero() {
 
       {/* Container for Typography */}
       <div className="flex flex-col w-full relative z-10">
-        {/* Top Text: PURE KOHISTAN — translate + opacity only */}
+        {/* Top Text: KOHISTAN — translate + opacity only */}
         <div className="w-full flex max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
           <div className="md:w-[55%] md:ml-auto w-full flex flex-col items-center md:items-start pt-2 sm:pt-0">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...smooth, delay: 0.25 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.3em] uppercase text-[#CC7778] relative z-20 will-change-transform"
-            >
-              Pure
-            </motion.h2>
             <div className="overflow-hidden w-full flex justify-center md:justify-start">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}

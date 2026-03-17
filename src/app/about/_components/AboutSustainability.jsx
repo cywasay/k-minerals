@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
 
@@ -49,7 +50,9 @@ export default function AboutSustainability() {
             Kohistan Minerals prioritizes responsible sourcing and sustainable practices. Our extraction methods minimize environmental impact while protecting natural resources. By supporting local communities and maintaining ethical operations, we ensure that the Kohistan mountains’ mineral wealth benefits generations to come.
           </p>
 
-          <Button>Learn More About Our Practices</Button>
+          <Link href="/contact">
+            <Button>Learn More About Our Practices</Button>
+          </Link>
         </motion.div>
       </div>
     </section>

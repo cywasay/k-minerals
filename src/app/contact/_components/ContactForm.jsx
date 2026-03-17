@@ -120,15 +120,22 @@ export default function ContactForm() {
             transition={{ ...smooth, delay: 0.2 }}
             className="p-6 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm"
           >
-            <h4 className="text-[#CC7778] text-[10px] uppercase tracking-[0.2em] font-bold mb-3">Direct Contact</h4>
-            <div className="flex flex-col gap-3 text-white">
-              <div>
-                <p className="text-white/40 text-[9px] uppercase mb-0.5">Sales</p>
-                <p className="text-base font-medium font-mono">sales@kohistanminerals.com</p>
+            <h4 className="text-[#CC7778] text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Email Us Directly</h4>
+            <div className="flex flex-col gap-6 text-white">
+              <div className="flex flex-col">
+                <p className="text-white/40 text-[9px] uppercase tracking-widest mb-1">Sales Inquiry</p>
+                <a href="mailto:sales@kohistanminerals.com" className="text-base sm:text-lg font-medium font-mono hover:text-[#CC7778] transition-colors break-all">
+                  sales@kohistanminerals.com
+                </a>
               </div>
-              <div>
-                <p className="text-white/40 text-[9px] uppercase mb-0.5">Support</p>
-                <p className="text-base font-medium font-mono">+92 3XX XXXXXXX</p>
+              <div className="flex flex-col">
+                <p className="text-white/40 text-[9px] uppercase tracking-widest mb-1">Customer Support</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📧</span>
+                  <a href="mailto:support@kohistanminerals.com" className="text-base sm:text-lg font-medium font-mono hover:text-[#CC7778] transition-colors break-all">
+                    support@kohistanminerals.com
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

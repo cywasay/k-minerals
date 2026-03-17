@@ -122,7 +122,7 @@ export default function WhyChooseUs() {
           viewport={vp}
           transition={{ ...smooth, delay: 0.2 }}
         >
-          <Link href="/about">
+          <Link href="/contact">
             <Button>
               Discover Our Differences
             </Button>

@@ -79,17 +79,13 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <h4 className="text-white font-semibold uppercase tracking-widest text-xs">Get in Touch</h4>
             <div className="flex flex-col gap-4 text-sm font-light text-white/40">
-              <p className="flex items-start gap-3">
-                <span className="text-[#CC7778]">📍</span>
-                1100 Louisiana Street, Houston, TX 77002
+              <p className="flex items-center gap-3 hover:text-[#CC7778] transition-colors">
+                <span className="text-[#CC7778]">📧</span>
+                <a href="mailto:sales@kohistanminerals.com">sales@kohistanminerals.com</a>
               </p>
               <p className="flex items-center gap-3 hover:text-[#CC7778] transition-colors">
                 <span className="text-[#CC7778]">📧</span>
-                sales@kohistanminerals.com
-              </p>
-              <p className="flex items-center gap-3">
-                <span className="text-[#CC7778]">📞</span>
-                +1 (713) 555-0123
+                <a href="mailto:support@kohistanminerals.com">support@kohistanminerals.com</a>
               </p>
             </div>
           </div>
@@ -99,8 +95,8 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs text-white/30 uppercase tracking-[0.2em]">
           <p>© {currentYear} Kohistan Minerals. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

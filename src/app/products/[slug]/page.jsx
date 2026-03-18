@@ -86,10 +86,6 @@ export default function ProductDetailPage({ params: paramsPromise }) {
 
       {/* Redesigned Product Information Sections */}
       <section className="py-24 sm:py-32 bg-[#191619] relative z-10 overflow-hidden border-y border-white/5">
-        {/* Cinematic Background Decorative Text */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none opacity-[0.015] select-none -z-10 pt-10">
-          <span className="text-[25vw] font-black uppercase tracking-tighter leading-none select-none">DATA</span>
-        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-16 lg:gap-20">
@@ -212,10 +208,6 @@ export default function ProductDetailPage({ params: paramsPromise }) {
 
       {/* Redesigned Business Inquiry CTA - Fully Mobile Optimized */}
       <section className="py-24 sm:py-48 px-4 sm:px-6 relative overflow-hidden bg-[#191619]">
-        {/* Background Decorative Large Text - Optimized for Mobile Scale */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03] select-none -z-0">
-          <span className="text-[20vw] sm:text-[15vw] font-black uppercase tracking-tight leading-none whitespace-nowrap">KOHISTAN</span>
-        </div>
 
         <motion.div 
           initial={{ opacity: 0, y: 60 }}

@@ -1,0 +1,248 @@
+﻿diff --git a/src/app/(landing)/_components/ProductHighlights.jsx b/src/app/(landing)/_components/ProductHighlights.jsx
+index fda1afa..5ac45fe 100644
+--- a/src/app/(landing)/_components/ProductHighlights.jsx
++++ b/src/app/(landing)/_components/ProductHighlights.jsx
+@@ -1,6 +1,7 @@
+ "use client";
+ 
+ import { motion } from "motion/react";
++import Link from "next/link";
+ 
+ const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.8 };
+ const vp = { once: true, amount: 0.2 };
+@@ -35,31 +36,31 @@ const highlights = [
+     title: "Industrial Salt",
+     description: "Bulk Himalayan salt supplied for chemical processing, tanning, and industrial manufacturing.",
+     icon: <FactoryIcon />,
++    slug: "industrial-salt"
+   },
+   {
+-    title: "Edible Salt",
++    title: "Edible Pink Salt",
+     description: "Food-grade Himalayan pink salt available in fine, coarse, and crystal grades.",
+     icon: <UtensilsIcon />,
++    slug: "edible-pink-salt"
+   },
+   {
+-    title: "Culinary Salt Products",
+-    description: "Cooking slabs, salt bowls, and kitchen products used by chefs and hospitality brands.",
+-    icon: <ChefHatIcon />,
+-  },
+-  {
+-    title: "Wellness Salt Products",
++    title: "Bath & Wellness",
+     description: "Salt lamps, bath salt, and spa products designed for wellness environments.",
+     icon: <SparklesIcon />,
+-  },
+-  {
+-    title: "Salt Tiles & Bricks",
+-    description: "Natural Himalayan salt blocks used for interior design, spa rooms, and salt walls.",
+-    icon: <LayoutGridIcon />,
++    slug: "bath-and-wellness"
+   },
+   {
+     title: "Animal Salt Licks",
+     description: "Natural mineral salt blocks used for livestock nutrition and agricultural use.",
+     icon: <PawPrintIcon />,
++    slug: "animal-salt-licks"
++  },
++  {
++    title: "Bulk Minerals",
++    description: "High-purity minerals sourced naturally to meet industrial and agricultural needs.",
++    icon: <LayoutGridIcon />,
++    slug: "bulk-minerals"
+   },
+ ];
+ 
+@@ -96,37 +97,38 @@ export default function ProductHighlights() {
+         </motion.div>
+ 
+         {/* Premium Dark Bento Grid */}
+-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
++        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full max-w-6xl">
+           {highlights.map((item, idx) => (
+-            <motion.div
+-              key={idx}
+-              initial={{ opacity: 0, y: 40 }}
+-              whileInView={{ opacity: 1, y: 0 }}
+-              viewport={vp}
+-              transition={{ ...smooth, delay: idx * 0.1 }}
+-              className="group relative flex flex-col p-4 sm:p-8 rounded-2xl border border-white/5 bg-[#121217]/50 backdrop-blur-md z-10 overflow-hidden"
+-            >
+-              {/* Internal Card Glow on Hover */}
+-              <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
++            <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
++              <motion.div
++                initial={{ opacity: 0, y: 40 }}
++                whileInView={{ opacity: 1, y: 0 }}
++                viewport={vp}
++                transition={{ ...smooth, delay: idx * 0.1 }}
++                className="group relative flex flex-col h-full p-4 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md z-10 overflow-hidden cursor-pointer hover:border-[#CC7778]/30 transition-all duration-500"
++              >
++                {/* Internal Card Glow on Hover */}
++                <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
+ 
+-              {/* Icon + Accent Line */}
+-              <div className="flex items-center justify-between mb-4 sm:mb-10">
+-                <div className="text-white/40 group-hover:text-[#CC7778] transition-colors duration-500">
+-                  {item.icon}
++                {/* Icon + Accent Line */}
++                <div className="flex items-center justify-between mb-4 sm:mb-10">
++                  <div className="text-white/40 group-hover:text-[#CC7778] transition-colors duration-500">
++                    {item.icon}
++                  </div>
++                  <div className="h-[1px] w-8 sm:w-12 bg-white/10 group-hover:bg-[#CC7778]/40 transition-colors duration-500" />
+                 </div>
+-                <div className="h-[1px] w-8 sm:w-12 bg-white/10 group-hover:bg-[#CC7778]/40 transition-colors duration-500" />
+-              </div>
+ 
+-              {/* Text Area */}
+-              <div className="mt-auto">
+-                <h3 className="text-sm sm:text-lg md:text-xl text-white font-semibold uppercase tracking-wider mb-1 sm:mb-2 group-hover:-translate-y-1 transition-transform duration-500">
+-                  {item.title}
+-                </h3>
+-                <p className="text-[#a1a1aa] font-light text-[10px] sm:text-sm leading-tight sm:leading-[1.6] group-hover:text-white/90 transition-colors duration-500">
+-                  {item.description}
+-                </p>
+-              </div>
+-            </motion.div>
++                {/* Text Area */}
++                <div className="mt-auto">
++                  <h3 className="text-sm sm:text-lg md:text-xl text-white font-semibold uppercase tracking-wider mb-1 sm:mb-2 group-hover:-translate-y-1 transition-transform duration-500">
++                    {item.title}
++                  </h3>
++                  <p className="text-[#a1a1aa] font-light text-[10px] sm:text-sm leading-tight sm:leading-[1.6] group-hover:text-white/90 transition-colors duration-500">
++                    {item.description}
++                  </p>
++                </div>
++              </motion.div>
++            </Link>
+           ))}
+         </div>
+       </div>
+diff --git a/src/app/(landing)/_components/Specialties.jsx b/src/app/(landing)/_components/Specialties.jsx
+index 61cfbc3..32021ea 100644
+--- a/src/app/(landing)/_components/Specialties.jsx
++++ b/src/app/(landing)/_components/Specialties.jsx
+@@ -1,83 +1,53 @@
+ "use client";
+ 
+ import Image from "next/image";
++import Link from "next/link";
+ import { motion } from "motion/react";
+-
+-const specialties = [
+-  {
+-    title: "Kohistan Pink Salt",
+-    desc: "Premium Himalayan pink salt for culinary and wellness uses, naturally rich in minerals.",
+-    image: "/pink-salt.png"
+-  },
+-  {
+-    title: "Red Salt",
+-    desc: "Mineral-rich Himalayan salt ideal for cooking, spa, and wellness applications.",
+-    image: "/red-salt-crystal.png"
+-  },
+-  {
+-    title: "White Crystal Salt",
+-    desc: "Pure, versatile salt suitable for culinary, decorative, and industrial purposes.",
+-    image: "/white-salt.png"
+-  },
+-  {
+-    title: "Black Salt",
+-    desc: "Specialty salt for gourmet cooking, health-focused recipes, and wellness products.",
+-    image: "/black-salt.png"
+-  },
+-  {
+-    title: "Animal Salt Licks",
+-    desc: "Natural mineral salt blocks for livestock nutrition and agricultural use.",
+-    image: "/lick-salt.png"
+-  },
+-  {
+-    title: "Bath & Wellness Salts",
+-    desc: "Salt lamps, bath salts, and spa products designed for relaxation and wellness environments.",
+-    image: "/bath-salt.png"
+-  }
+-];
++import { products } from "@/constants/products";
+ 
+ export default function Specialties() {
+   return (
+-    <section className="bg-[#040610] opacity-80 py-12 w-full">
++    <section className="bg-[#191619] py-12 w-full">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:grid-cols-3 lg:gap-14">
+-          {specialties.map((item, idx) => (
+-            <motion.div
+-              key={idx}
+-              initial={{ opacity: 0, y: 50 }}
+-              whileInView={{ opacity: 1, y: 0 }}
+-              viewport={{ once: true, amount: 0.2 }}
+-              transition={{
+-                duration: 0.6,
+-                ease: [0.25, 0.1, 0.25, 1],
+-                delay: idx * 0.08,
+-              }}
+-              className="flex flex-col items-center group cursor-pointer"
+-            >
++          {products.map((item, idx) => (
++            <Link key={idx} href={`/products/${item.slug}`} className="block">
+               <motion.div
+-                whileHover={{ y: -8 }}
+-                transition={{ duration: 0.4, ease: "easeOut" }}
+-                className="relative w-full h-[140px] sm:h-[180px] md:h-[220px] lg:h-[240px] mb-4 sm:mb-6"
++                initial={{ opacity: 0, y: 50 }}
++                whileInView={{ opacity: 1, y: 0 }}
++                viewport={{ once: true, amount: 0.2 }}
++                transition={{
++                  duration: 0.6,
++                  ease: [0.25, 0.1, 0.25, 1],
++                  delay: idx * 0.08,
++                }}
++                className="flex flex-col items-center group cursor-pointer"
+               >
+-                {/* Subtle under-glow effect on hover */}
+-                <div className="absolute inset-x-0 bottom-[10%] h-[40%] bg-[#CC7778]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+-                
+-                <Image
+-                  src={item.image} 
+-                  alt={item.title}
+-                  fill
+-                  className="object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] brightness-90 relative z-10"
+-                />
++                <motion.div
++                  whileHover={{ y: -8 }}
++                  transition={{ duration: 0.4, ease: "easeOut" }}
++                  className="relative w-full h-[140px] sm:h-[180px] md:h-[220px] lg:h-[240px] mb-4 sm:mb-6"
++                >
++                  {/* Subtle under-glow effect on hover */}
++                  <div className="absolute inset-x-0 bottom-[10%] h-[40%] bg-[#CC7778]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
++                  
++                  <Image
++                    src={item.image} 
++                    alt={item.title}
++                    fill
++                    className="object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)] brightness-90 relative z-10"
++                  />
++                </motion.div>
++                <div className="w-full flex flex-col text-center">
++                  <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl mb-1 sm:mb-2 font-bold uppercase tracking-wider font-sans group-hover:text-[#CC7778] transition-colors duration-300">
++                    {item.title}
++                  </h3>
++                  <p className="text-white opacity-60 text-[11px] sm:text-xs md:text-[13px] leading-[1.5] font-light group-hover:opacity-90 transition-opacity duration-300">
++                    {item.subtitle}
++                  </p>
++                </div>
+               </motion.div>
+-              <div className="w-full flex flex-col text-center">
+-                <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl mb-1 sm:mb-2 font-bold uppercase tracking-wider font-sans">
+-                  {item.title}
+-                </h3>
+-                <p className="text-white opacity-60 text-[11px] sm:text-xs md:text-[13px] leading-[1.5] font-light">
+-                  {item.desc}
+-                </p>
+-              </div>
+-            </motion.div>
++            </Link>
+           ))}
+         </div>
+       </div>

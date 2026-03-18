@@ -33,9 +33,17 @@ export default function Hero() {
 
       {/* Container for Typography */}
       <div className="flex flex-col w-full relative z-10">
-        {/* Top Text: KOHISTAN — translate + opacity only */}
+        {/* Top Text: PRISTINE KOHISTAN — translate + opacity only */}
         <div className="w-full flex max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
           <div className="md:w-[55%] md:ml-auto w-full flex flex-col items-center md:items-start pt-2 sm:pt-0">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...smooth, delay: 0.25 }}
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.3em] uppercase text-[#CC7778] relative z-20 will-change-transform"
+            >
+              Pristine
+            </motion.h2>
             <div className="overflow-hidden w-full flex justify-center md:justify-start">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}

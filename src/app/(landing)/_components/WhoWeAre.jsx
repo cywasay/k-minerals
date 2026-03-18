@@ -34,7 +34,6 @@ export default function WhoWeAre() {
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#CC7778]/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20 w-full flex flex-col lg:flex-row gap-10 lg:gap-8 items-center">
-        
         {/* Left Side: Text and Commitments */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -58,11 +57,11 @@ export default function WhoWeAre() {
           </h2>
 
           <p className="text-[#a1a1aa] font-light text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
-            Rooted in Pakistan’s rich mineral heritage, Kohistan Minerals supplies
-            Himalayan salts and minerals to chefs, wellness brands, agricultural
-            producers, and industries worldwide. We combine expertise, sustainable
-            sourcing, and modern processing to deliver products of exceptional
-            quality and consistency.
+            Rooted in Pakistan’s rich mineral heritage, Kohistan Minerals
+            supplies Himalayan salts and minerals to chefs, wellness brands,
+            agricultural producers, and industries worldwide. We combine
+            expertise, sustainable sourcing, and modern processing to deliver
+            products of exceptional quality and consistency.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -92,9 +91,7 @@ export default function WhoWeAre() {
             transition={{ ...smooth, delay: 0.6 }}
           >
             <Link href="/contact">
-              <Button>
-                Explore Our Story
-              </Button>
+              <Button>Explore Our Story</Button>
             </Link>
           </motion.div>
         </motion.div>
@@ -109,7 +106,7 @@ export default function WhoWeAre() {
         >
           {/* Subtle frame behind image */}
           <div className="absolute border border-white   rounded-2xl" />
-          
+
           <div className="relative w-full h-full drop-shadow-2xl">
             <Image
               src="/who-we-are.jpg"
@@ -119,7 +116,6 @@ export default function WhoWeAre() {
             />
           </div>
         </motion.div>
-
       </div>
     </section>
   );

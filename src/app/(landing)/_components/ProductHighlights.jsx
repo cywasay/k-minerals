@@ -39,28 +39,34 @@ const highlights = [
     slug: "industrial-salt"
   },
   {
-    title: "Edible Pink Salt",
+    title: "Edible Salt",
     description: "Food-grade Himalayan pink salt available in fine, coarse, and crystal grades.",
     icon: <UtensilsIcon />,
     slug: "edible-pink-salt"
   },
   {
-    title: "Bath & Wellness",
+    title: "Culinary Salt Products",
+    description: "Cooking slabs, salt bowls, and kitchen products used by chefs and hospitality brands.",
+    icon: <ChefHatIcon />,
+    slug: null
+  },
+  {
+    title: "Wellness Salt Products",
     description: "Salt lamps, bath salt, and spa products designed for wellness environments.",
     icon: <SparklesIcon />,
     slug: "bath-and-wellness"
+  },
+  {
+    title: "Salt Tiles & Bricks",
+    description: "Natural Himalayan salt blocks used for interior design, spa rooms, and salt walls.",
+    icon: <LayoutGridIcon />,
+    slug: null
   },
   {
     title: "Animal Salt Licks",
     description: "Natural mineral salt blocks used for livestock nutrition and agricultural use.",
     icon: <PawPrintIcon />,
     slug: "animal-salt-licks"
-  },
-  {
-    title: "Bulk Minerals",
-    description: "High-purity minerals sourced naturally to meet industrial and agricultural needs.",
-    icon: <LayoutGridIcon />,
-    slug: "bulk-minerals"
   },
 ];
 
@@ -98,8 +104,8 @@ export default function ProductHighlights() {
 
         {/* Premium Dark Bento Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full max-w-6xl">
-          {highlights.map((item, idx) => (
-            <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
+          {highlights.map((item, idx) => {
+            const ElementContent = (
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -128,8 +134,18 @@ export default function ProductHighlights() {
                   </p>
                 </div>
               </motion.div>
-            </Link>
-          ))}
+            );
+
+            return item.slug ? (
+              <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
+                {ElementContent}
+              </Link>
+            ) : (
+              <div key={idx} className="block h-full">
+                {ElementContent}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

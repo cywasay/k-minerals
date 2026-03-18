@@ -42,7 +42,6 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_rgba(204,119,120,0.08),_transparent_50%)] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20 w-full flex flex-col items-center">
-        
         {/* Centered Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -85,7 +84,7 @@ export default function WhyChooseUs() {
             >
               {/* Internal Accent Lighting */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#CC7778]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
+
               {/* Reveal Image on Hover */}
               <div className="absolute inset-0 opacity-30 md:opacity-20 group-hover:opacity-70 transition-all duration-700 ease-in-out pointer-events-none z-0 mix-blend-luminosity group-hover:mix-blend-normal">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-[#191619]/50 z-10" />
@@ -96,7 +95,7 @@ export default function WhyChooseUs() {
                   className="object-cover object-center scale-110 group-hover:scale-100 transition-transform duration-1000"
                 />
               </div>
-              
+
               {/* Massive Watermark Number */}
               <div className="absolute top-4 right-4 md:top-6 md:right-6 text-5xl md:text-7xl lg:text-8xl font-black text-white mix-blend-overlay opacity-5 group-hover:opacity-30 group-hover:-translate-y-4 transition-all duration-700 pointer-events-none z-10">
                 {feature.num}
@@ -123,12 +122,9 @@ export default function WhyChooseUs() {
           transition={{ ...smooth, delay: 0.2 }}
         >
           <Link href="/contact">
-            <Button>
-              Discover Our Differences
-            </Button>
+            <Button>Discover Our Differences</Button>
           </Link>
         </motion.div>
-        
       </div>
     </section>
   );

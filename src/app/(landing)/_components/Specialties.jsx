@@ -3,15 +3,53 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { products } from "@/constants/products";
+
+const specialties = [
+  {
+    title: "Kohistan Pink Salt",
+    desc: "Premium Himalayan pink salt for culinary and wellness uses, naturally rich in minerals.",
+    image: "/pink-salt.png",
+    slug: "edible-pink-salt"
+  },
+  {
+    title: "Red Salt",
+    desc: "Mineral-rich Himalayan salt ideal for cooking, spa, and wellness applications.",
+    image: "/red-salt-crystal.png",
+    slug: null
+  },
+  {
+    title: "White Crystal Salt",
+    desc: "Pure, versatile salt suitable for culinary, decorative, and industrial purposes.",
+    image: "/white-salt.png",
+    slug: "industrial-salt"
+  },
+  {
+    title: "Black Salt",
+    desc: "Specialty salt for gourmet cooking, health-focused recipes, and wellness products.",
+    image: "/black-salt.png",
+    slug: null
+  },
+  {
+    title: "Animal Salt Licks",
+    desc: "Natural mineral salt blocks for livestock nutrition and agricultural use.",
+    image: "/lick-salt.png",
+    slug: "animal-salt-licks"
+  },
+  {
+    title: "Bath & Wellness Salts",
+    desc: "Salt lamps, bath salts, and spa products designed for relaxation and wellness environments.",
+    image: "/bath-salt.png",
+    slug: "bath-and-wellness"
+  }
+];
 
 export default function Specialties() {
   return (
     <section className="bg-[#191619] py-12 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:grid-cols-3 lg:gap-14">
-          {products.map((item, idx) => (
-            <Link key={idx} href={`/products/${item.slug}`} className="block">
+          {specialties.map((item, idx) => {
+            const CardContent = (
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -43,12 +81,22 @@ export default function Specialties() {
                     {item.title}
                   </h3>
                   <p className="text-white opacity-60 text-[11px] sm:text-xs md:text-[13px] leading-[1.5] font-light group-hover:opacity-90 transition-opacity duration-300">
-                    {item.subtitle}
+                    {item.desc}
                   </p>
                 </div>
               </motion.div>
-            </Link>
-          ))}
+            );
+
+            return item.slug ? (
+              <Link key={idx} href={`/products/${item.slug}`} className="block">
+                {CardContent}
+              </Link>
+            ) : (
+              <div key={idx} className="block">
+                {CardContent}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

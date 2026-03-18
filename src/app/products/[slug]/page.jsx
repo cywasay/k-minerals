@@ -161,10 +161,18 @@ export default function ProductDetailPage({ params: paramsPromise }) {
                 <div className="absolute inset-0 bg-[#CC7778]/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-transparent z-10 opacity-60" />
                 <Image 
-                  src="/supply_format.png" 
+                  src={
+                    {
+                      'bath-and-wellness': '/bath_supply.jpg',
+                      'edible-pink-salt': '/edible_supply.jpg',
+                      'animal-salt-licks': '/animal_supply.jpg',
+                      'bulk-minerals': '/bulk_supply.jpg',
+                      'industrial-salt': '/industrial_supply.jpg'
+                    }[product.slug] || '/supply_format.png'
+                  }
                   alt="Supply Format Concept" 
                   fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
               </motion.div>
               
@@ -227,10 +235,18 @@ export default function ProductDetailPage({ params: paramsPromise }) {
                 <div className="absolute inset-0 bg-[#CC7778]/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-transparent z-10 opacity-60" />
                 <Image 
-                  src="/source_efficiency.png" 
+                  src={
+                    {
+                      'bath-and-wellness': '/bath_source.png',
+                      'edible-pink-salt': '/edible_source.jpg',
+                      'animal-salt-licks': '/animal_source.jpg',
+                      'bulk-minerals': '/bulk_source.jpg',
+                      'industrial-salt': '/industrial_source.jpg'
+                    }[product.slug] || '/source_efficiency.png'
+                  }
                   alt="Source Efficiency Concept" 
                   fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
               </motion.div>
             </div>

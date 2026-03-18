@@ -41,11 +41,11 @@ export default function ProductDetailPage({ params: paramsPromise }) {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="h-[1px] w-12 bg-[#CC7778]" />
-              <span className="text-[#CC7778] uppercase tracking-[0.3em] text-xs font-semibold">
+              <span className="uppercase tracking-[0.3em] text-xs font-semibold text-white">
                 {product.subtitle}
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight mb-6 leading-none text-[#CC7778]">
               {product.title}
             </h1>
             <p className="text-[#CC7778] text-lg sm:text-xl font-medium uppercase tracking-widest mb-8 border-l-2 border-[#CC7778]/30 pl-6 italic">
@@ -91,9 +91,21 @@ export default function ProductDetailPage({ params: paramsPromise }) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-16 lg:gap-20">
             {/* Spec Category Mapping for refined structure */}
             {[
-              { title: "Primary Uses", data: product.primaryUses },
-              { title: "Product Range", data: product.productRange },
-              { title: "Quality & Handling", data: product.qualityHandling }
+              { 
+                title: "Primary Uses", 
+                data: product.primaryUses,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              },
+              { 
+                title: "Product Range", 
+                data: product.productRange,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              },
+              { 
+                title: "Quality & Handling", 
+                data: product.qualityHandling,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              }
             ].map((category, i) => (
               <motion.div
                 key={i}
@@ -101,86 +113,128 @@ export default function ProductDetailPage({ params: paramsPromise }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={vp}
                 transition={{ ...smooth, delay: i * 0.15 }}
-                className="flex flex-col"
+                className="flex flex-col h-full bg-white/[0.02] border border-white/5 rounded-3xl p-8 sm:p-10 hover:border-[#CC7778]/30 transition-all duration-500 group relative overflow-hidden"
               >
-                {/* Section Title with Numeric Index */}
-                <div className="flex items-center gap-4 sm:gap-5 mb-8 sm:mb-14">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.02] shadow-inner">
-                    <span className="text-[9px] sm:text-[10px] font-bold text-[#CC7778] tracking-widest uppercase italic">0{i + 1}</span>
+                {/* Background Glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#CC7778]/5 rounded-bl-full blur-2xl group-hover:bg-[#CC7778]/10 transition-colors duration-500" />
+                
+                {/* Modern Header */}
+                <div className="flex flex-col mb-10 relative z-10">
+                  <div className="flex items-center gap-4 mb-4 text-[#CC7778]">
+                    {category.icon}
+                    <div className="h-[1px] w-12 bg-white/10" />
                   </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-lg sm:text-2xl text-white font-bold uppercase tracking-tight leading-none mb-1">
-                      {category.title}
-                    </h3>
-                    <div className="h-0.5 w-8 sm:w-12 bg-[#CC7778]/50" />
-                  </div>
+                  <h3 className="text-xl sm:text-2xl text-white font-bold uppercase tracking-[0.1em] leading-tight">
+                    {category.title}
+                  </h3>
                 </div>
 
-                {/* Individual Item Cards */}
-                <div className="flex flex-col gap-3 sm:gap-4">
+                {/* Minimalist List */}
+                <div className="flex flex-col gap-6 relative z-10">
                   {category.data.map((item, j) => (
-                    <motion.div
+                    <div
                       key={j}
-                      whileHover={{ x: 10 }}
-                      className="group flex items-start gap-4 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/[0.02] border border-white/[0.04] hover:border-[#CC7778]/30 transition-all duration-500 shadow-xl"
+                      className="flex items-start gap-4 group/item"
                     >
-                      {/* Interactive Dot */}
-                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-[#CC7778] opacity-30 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500" />
-                      
-                      <p className="text-white/50 text-[13px] sm:text-[15px] leading-relaxed font-light group-hover:text-white transition-colors duration-500">
+                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 group-hover/item:bg-[#CC7778] transition-colors duration-300 flex-shrink-0 shadow-[0_0_10px_rgba(204,119,120,0)] group-hover/item:shadow-[0_0_10px_rgba(204,119,120,0.8)]" />
+                      <p className="text-white/60 text-sm sm:text-base font-light leading-relaxed group-hover/item:text-white transition-colors duration-300">
                         {item}
                       </p>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-20 sm:mt-32">
-             {/* Supply Format Card */}
-             <motion.div 
-               initial={{ opacity: 0, x: -30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={vp}
-               transition={{ ...smooth }}
-               className="p-8 sm:p-10 rounded-3xl bg-white/[0.02] border border-white/5 relative overflow-hidden group"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#CC7778]/5 rounded-bl-full blur-2xl group-hover:bg-[#CC7778]/10 transition-colors duration-500" />
-              <h3 className="text-lg sm:text-xl text-white font-bold uppercase tracking-widest mb-6 sm:mb-8">Supply Format</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                {product.supplyFormat.map((format, idx) => (
-                  <div key={idx} className="flex flex-col gap-1 sm:gap-2 p-3 sm:p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                    <span className="text-[#CC7778] text-[9px] sm:text-[10px] uppercase tracking-tighter font-bold">Standard</span>
-                    <p className="text-white/70 text-xs sm:text-sm font-light">{format}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-             {/* Efficiency Card */}
-             <motion.div 
-               initial={{ opacity: 0, x: 30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={vp}
-               transition={{ ...smooth }}
-               className="p-8 sm:p-10 rounded-3xl bg-white/[0.02] border border-white/5 relative overflow-hidden group"
-            >
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#CC7778]/5 rounded-tr-full blur-2xl group-hover:bg-[#CC7778]/10 transition-colors duration-500" />
-              <h3 className="text-lg sm:text-xl text-white font-bold uppercase tracking-widest mb-6 sm:mb-8">Source Efficiency</h3>
-              <div className="space-y-4">
-                {product.whyWorks.map((reason, idx) => (
-                  <div key={idx} className="flex items-start gap-3 sm:gap-4">
-                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full border border-[#CC7778]/30 flex items-center justify-center text-[10px] text-[#CC7778] font-bold">
-                      {idx + 1}
+          <div className="mt-24 sm:mt-40 pt-16 sm:pt-24 border-t border-white/5 space-y-20 lg:space-y-32">
+            
+            {/* Supply Format Row */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={vp}
+                transition={{ ...smooth }}
+                className="relative h-[400px] sm:h-[500px] w-full rounded-3xl overflow-hidden border border-white/10 group shadow-2xl"
+              >
+                <div className="absolute inset-0 bg-[#CC7778]/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-transparent z-10 opacity-60" />
+                <Image 
+                  src="/supply_format.png" 
+                  alt="Supply Format Concept" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                />
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={vp}
+                transition={{ ...smooth, delay: 0.15 }}
+                className="flex flex-col"
+              >
+                <div className="flex items-center gap-4 mb-10">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#CC7778] shadow-[0_0_10px_rgba(204,119,120,0.8)]" />
+                  <h3 className="text-sm sm:text-base text-white font-bold uppercase tracking-[0.2em] leading-tight">Supply Format & Capability</h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  {product.supplyFormat.map((format, idx) => (
+                    <div key={idx} className="flex flex-col relative pl-6 before:absolute before:left-0 before:top-1 before:bottom-1 before:w-[2px] before:bg-white/10 hover:before:bg-[#CC7778]/70 before:transition-colors before:duration-500">
+                      <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold mb-2">Spec {(idx + 1).toString().padStart(2, '0')}</span>
+                      <p className="text-white/80 text-sm font-light leading-relaxed">{format}</p>
                     </div>
-                    <p className="text-white/60 text-xs sm:text-base font-light group-hover:text-white/80 transition-colors duration-300">
-                      {reason}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Source Efficiency Row */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={vp}
+                transition={{ ...smooth }}
+                className="flex flex-col order-2 lg:order-1"
+              >
+                <div className="flex items-center gap-4 mb-10">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#CC7778] shadow-[0_0_10px_rgba(204,119,120,0.8)]" />
+                  <h3 className="text-sm sm:text-base text-white font-bold uppercase tracking-[0.2em] leading-tight">Source Quality & Efficiency</h3>
+                </div>
+                <div className="grid grid-cols-1 gap-2">
+                  {product.whyWorks.map((reason, idx) => (
+                    <div key={idx} className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/[0.02] transition-colors duration-500 border border-transparent hover:border-white/[0.05]">
+                      <div className="text-2xl sm:text-3xl font-black text-white/5 group-hover:text-[#CC7778]/40 transition-colors duration-500 italic">
+                        {(idx + 1).toString().padStart(2, '0')}
+                      </div>
+                      <p className="text-white/50 text-sm font-light leading-relaxed group-hover:text-white transition-colors duration-300">
+                        {reason}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={vp}
+                transition={{ ...smooth, delay: 0.15 }}
+                className="relative h-[400px] sm:h-[500px] w-full rounded-3xl overflow-hidden border border-white/10 group shadow-2xl order-1 lg:order-2"
+              >
+                <div className="absolute inset-0 bg-[#CC7778]/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-transparent z-10 opacity-60" />
+                <Image 
+                  src="/source_efficiency.png" 
+                  alt="Source Efficiency Concept" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                />
+              </motion.div>
+            </div>
+            
           </div>
         </div>
       </section>

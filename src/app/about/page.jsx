@@ -10,7 +10,7 @@ import AboutCTA from "./_components/AboutCTA";
 
 export default function AboutPage() {
   return (
-    <div className="relative overflow-clip bg-[#060608]">
+    <div className="relative overflow-clip bg-[#191619]">
       <Header />
       <AboutHero />
       <AboutLegacy />

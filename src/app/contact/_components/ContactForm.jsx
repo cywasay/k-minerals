@@ -83,7 +83,7 @@ export default function ContactForm() {
                   className={`group relative flex items-center justify-between p-4 sm:p-5 rounded-xl border transition-colors duration-500 text-left ${
                     activeCategory === cat.id 
                     ? "border-[#CC7778]" 
-                    : "bg-[#121217]/50 border-white/5 hover:border-white/20"
+                    : "bg-[#191619] border-white/5 hover:border-white/20"
                   }`}
                 >
                   {/* Sliding Background */}
@@ -148,7 +148,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={vp}
             transition={{ ...smooth, delay: 0.15 }}
-            className="bg-[#121217] rounded-3xl p-6 sm:p-8 md:p-10 border border-white/5 relative shadow-2xl"
+            className="bg-[#191619] rounded-3xl p-6 sm:p-8 md:p-10 border border-white/5 relative shadow-2xl"
           >
             {/* Form Glow */}
             <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-[#CC7778]/5 blur-[60px] pointer-events-none" />

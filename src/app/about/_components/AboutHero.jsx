@@ -18,11 +18,11 @@ export default function AboutHero() {
           priority
         />
         {/* Overlays for depth and readability */}
-        <div className="absolute inset-0 bg-[#060608]/70" />
+        <div className="absolute inset-0 bg-[#191619]/70" />
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to right, #060608 20%, transparent 60%, transparent 80%, #060608 100%), linear-gradient(to bottom, #060608 0%, transparent 20%, transparent 80%, #060608 100%)"
+            background: "linear-gradient(to right, #191619 20%, transparent 60%, transparent 80%, #191619 100%), linear-gradient(to bottom, #191619 0%, transparent 20%, transparent 80%, #191619 100%)"
           }}
         />
       </div>

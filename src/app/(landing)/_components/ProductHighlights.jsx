@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.8 };
 const vp = { once: true, amount: 0.2 };
@@ -35,31 +36,31 @@ const highlights = [
     title: "Industrial Salt",
     description: "Bulk Himalayan salt supplied for chemical processing, tanning, and industrial manufacturing.",
     icon: <FactoryIcon />,
+    slug: "industrial-salt"
   },
   {
-    title: "Edible Salt",
+    title: "Edible Pink Salt",
     description: "Food-grade Himalayan pink salt available in fine, coarse, and crystal grades.",
     icon: <UtensilsIcon />,
+    slug: "edible-pink-salt"
   },
   {
-    title: "Culinary Salt Products",
-    description: "Cooking slabs, salt bowls, and kitchen products used by chefs and hospitality brands.",
-    icon: <ChefHatIcon />,
-  },
-  {
-    title: "Wellness Salt Products",
+    title: "Bath & Wellness",
     description: "Salt lamps, bath salt, and spa products designed for wellness environments.",
     icon: <SparklesIcon />,
-  },
-  {
-    title: "Salt Tiles & Bricks",
-    description: "Natural Himalayan salt blocks used for interior design, spa rooms, and salt walls.",
-    icon: <LayoutGridIcon />,
+    slug: "bath-and-wellness"
   },
   {
     title: "Animal Salt Licks",
     description: "Natural mineral salt blocks used for livestock nutrition and agricultural use.",
     icon: <PawPrintIcon />,
+    slug: "animal-salt-licks"
+  },
+  {
+    title: "Bulk Minerals",
+    description: "High-purity minerals sourced naturally to meet industrial and agricultural needs.",
+    icon: <LayoutGridIcon />,
+    slug: "bulk-minerals"
   },
 ];
 
@@ -96,37 +97,38 @@ export default function ProductHighlights() {
         </motion.div>
 
         {/* Premium Dark Bento Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full max-w-6xl">
           {highlights.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={vp}
-              transition={{ ...smooth, delay: idx * 0.1 }}
-              className="group relative flex flex-col p-4 sm:p-8 rounded-2xl border border-white/5 bg-[#121217]/50 backdrop-blur-md z-10 overflow-hidden"
-            >
-              {/* Internal Card Glow on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
+            <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={vp}
+                transition={{ ...smooth, delay: idx * 0.1 }}
+                className="group relative flex flex-col h-full p-4 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md z-10 overflow-hidden cursor-pointer hover:border-[#CC7778]/30 transition-all duration-500"
+              >
+                {/* Internal Card Glow on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
 
-              {/* Icon + Accent Line */}
-              <div className="flex items-center justify-between mb-4 sm:mb-10">
-                <div className="text-white/40 group-hover:text-[#CC7778] transition-colors duration-500">
-                  {item.icon}
+                {/* Icon + Accent Line */}
+                <div className="flex items-center justify-between mb-4 sm:mb-10">
+                  <div className="text-white/40 group-hover:text-[#CC7778] transition-colors duration-500">
+                    {item.icon}
+                  </div>
+                  <div className="h-[1px] w-8 sm:w-12 bg-white/10 group-hover:bg-[#CC7778]/40 transition-colors duration-500" />
                 </div>
-                <div className="h-[1px] w-8 sm:w-12 bg-white/10 group-hover:bg-[#CC7778]/40 transition-colors duration-500" />
-              </div>
 
-              {/* Text Area */}
-              <div className="mt-auto">
-                <h3 className="text-sm sm:text-lg md:text-xl text-white font-semibold uppercase tracking-wider mb-1 sm:mb-2 group-hover:-translate-y-1 transition-transform duration-500">
-                  {item.title}
-                </h3>
-                <p className="text-[#a1a1aa] font-light text-[10px] sm:text-sm leading-tight sm:leading-[1.6] group-hover:text-white/90 transition-colors duration-500">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
+                {/* Text Area */}
+                <div className="mt-auto">
+                  <h3 className="text-sm sm:text-lg md:text-xl text-white font-semibold uppercase tracking-wider mb-1 sm:mb-2 group-hover:-translate-y-1 transition-transform duration-500">
+                    {item.title}
+                  </h3>
+                  <p className="text-[#a1a1aa] font-light text-[10px] sm:text-sm leading-tight sm:leading-[1.6] group-hover:text-white/90 transition-colors duration-500">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

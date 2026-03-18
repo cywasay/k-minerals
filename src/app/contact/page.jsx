@@ -8,7 +8,7 @@ import SmoothScroll from "@/components/ui/SmoothScroll";
 export default function ContactPage() {
   return (
     <SmoothScroll>
-      <div className="relative overflow-clip min-h-screen flex flex-col pt-28 bg-[#060608]">
+      <div className="relative overflow-clip min-h-screen flex flex-col pt-28 bg-[#191619]">
         <Header />
         <main className="flex-grow">
           <ContactForm />

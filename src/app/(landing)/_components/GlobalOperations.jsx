@@ -15,7 +15,7 @@ const regions = [
 
 export default function GlobalOperations() {
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden z-10 bg-[#040610]">
+    <section className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden z-10 bg-[#191619]">
       {/* Background Decorative Gradient */}
       <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom,_rgba(204,119,120,0.06),_transparent_60%)] pointer-events-none -z-10" />
 
@@ -109,7 +109,7 @@ export default function GlobalOperations() {
             {regions.map((region, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-[#121217]/60 backdrop-blur-md hover:border-[#CC7778]/40 transition-colors duration-300"
+                className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-[#191619]/60 backdrop-blur-md hover:border-[#CC7778]/40 transition-colors duration-300"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-[#CC7778]" />
                 <span className="text-white/80 text-sm font-medium tracking-wide">

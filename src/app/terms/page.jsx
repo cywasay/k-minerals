@@ -10,7 +10,7 @@ const smooth = { type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.8 };
 export default function TermsPage() {
   return (
     <SmoothScroll>
-      <div className="relative overflow-clip min-h-screen flex flex-col pt-28 bg-[#060608]">
+      <div className="relative overflow-clip min-h-screen flex flex-col pt-28 bg-[#191619]">
         <Header />
         <main className="flex-grow py-16 md:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 w-full text-left">

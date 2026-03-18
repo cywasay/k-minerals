@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { products } from "@/constants/products";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#040406] border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-[#191619] border-t border-white/5 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Logo & Info */}
@@ -32,7 +33,7 @@ export default function Footer() {
               {["Specialties", "Process", "Highlights", "Global Network"].map((link) => (
                 <li key={link}>
                   <Link 
-                    href="#" 
+                    href="/#capabilities" 
                     className="text-white/40 hover:text-[#CC7778] transition-colors text-sm font-light"
                   >
                     {link}
@@ -62,13 +63,13 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <h4 className="text-white font-semibold uppercase tracking-widest text-xs">Products</h4>
             <ul className="flex flex-col gap-3">
-              {["Industrial Salt", "Edible Pink Salt", "Bath & Wellness", "Animal Feed Salt", "Bulk Minerals"].map((product) => (
-                <li key={product}>
+              {products.map((product) => (
+                <li key={product.slug}>
                   <Link 
-                    href="#" 
+                    href={`/products/${product.slug}`} 
                     className="text-white/40 hover:text-[#CC7778] transition-colors text-sm font-light"
                   >
-                    {product}
+                    {product.title}
                   </Link>
                 </li>
               ))}

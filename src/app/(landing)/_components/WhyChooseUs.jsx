@@ -37,7 +37,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative w-full py-12 flex min-h-[85vh] sm:min-h-[90vh] items-center sm:py-16 md:py-20 overflow-hidden z-10 bg-[#060608]">
+    <section className="relative w-full py-12 flex min-h-[85vh] sm:min-h-[90vh] items-center sm:py-16 md:py-20 overflow-hidden z-10 bg-[#191619]">
       {/* Background Decorative Gradient */}
       <div className="absolute inset-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_rgba(204,119,120,0.08),_transparent_50%)] pointer-events-none -z-10" />
 
@@ -81,14 +81,14 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={vp}
               transition={{ ...smooth, delay: 0.1 * idx }}
-              className="group relative flex-1 md:hover:flex-[1.5] lg:hover:flex-[1.8] transition-all duration-700 ease-out bg-[#0a0a0e] border border-white/5 hover:border-[#CC7778]/40 hover:bg-[#121217] rounded-2xl overflow-hidden flex flex-col justify-end p-5 sm:p-6 cursor-pointer h-[200px] md:h-full"
+              className="group relative flex-1 md:hover:flex-[1.5] lg:hover:flex-[1.8] transition-all duration-700 ease-out bg-white/[0.02] border border-white/5 hover:border-[#CC7778]/40 hover:bg-white/[0.05] rounded-2xl overflow-hidden flex flex-col justify-end p-5 sm:p-6 cursor-pointer h-[200px] md:h-full"
             >
               {/* Internal Accent Lighting */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#CC7778]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
               {/* Reveal Image on Hover */}
               <div className="absolute inset-0 opacity-30 md:opacity-20 group-hover:opacity-70 transition-all duration-700 ease-in-out pointer-events-none z-0 mix-blend-luminosity group-hover:mix-blend-normal">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-[#0a0a0e]/50 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-[#191619]/50 z-10" />
                 <Image
                   src={feature.image}
                   alt={feature.label}

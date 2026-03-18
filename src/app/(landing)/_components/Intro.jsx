@@ -19,11 +19,11 @@ export default function Intro() {
           priority
         />
         {/* Overlay for readability and blending with the rest of the site */}
-        <div className="absolute inset-0 bg-[#060608]/70" />
+        <div className="absolute inset-0 bg-[#191619]/70" />
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, #060608 0%, transparent 20%, transparent 80%, #060608 100%)"
+            background: "linear-gradient(to bottom, #191619 0%, transparent 20%, transparent 80%, #191619 100%)"
           }}
         />
       </div>

@@ -52,12 +52,21 @@ export default function Header() {
           className="flex items-center gap-2 group transition-transform duration-300 hover:scale-105 z-50"
           onClick={() => setIsMenuOpen(false)}
         >
-          <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24">
+          <div className="relative w-16 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24">
+            {/* Desktop Logo */}
             <Image 
               src="/logo.png" 
               alt="Kohistan Minerals Logo" 
               fill
-              className="object-contain"
+              className="object-contain hidden sm:block"
+              priority
+            />
+            {/* Mobile Logo (Mountains) */}
+            <Image 
+              src="/mobile_logo.png" 
+              alt="Kohistan Minerals Mobile Logo" 
+              fill
+              className="object-contain object-left block sm:hidden scale-[2.5] origin-left"
               priority
             />
           </div>

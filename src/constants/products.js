@@ -264,7 +264,7 @@ export const products = [
       "Optimal geographical presence",
       "Compliant with international standards"
     ],
-    image: "/industrial_supply.jpg",
+    image: "/rare-earth/copper.jpg",
     bgAccent: "rgba(184, 115, 51, 0.15)"
   },
   {
@@ -310,7 +310,7 @@ export const products = [
       "Robust processing framework",
       "Trusted international supply"
     ],
-    image: "/white-salt.png",
+    image: "/rare-earth/silver.jpg",
     bgAccent: "rgba(192, 192, 192, 0.15)"
   },
   {
@@ -356,7 +356,7 @@ export const products = [
       "Highest standard asset protection",
       "Aligned with global market regulations"
     ],
-    image: "/white-salt.png",
+    image: "/rare-earth/Gold-ore-in-bulk.jpg",
     bgAccent: "rgba(255, 215, 0, 0.1)"
   },
   {
@@ -402,7 +402,7 @@ export const products = [
       "Rapid deployment supply chains",
       "Ideal for megaprojects"
     ],
-    image: "/industrial_supply.jpg",
+    image: "/rare-earth/iron.jpg",
     bgAccent: "rgba(161, 157, 148, 0.15)"
   },
   {

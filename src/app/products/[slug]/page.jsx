@@ -54,8 +54,27 @@ export default function ProductDetailPage({ params: paramsPromise }) {
             <p className="text-white/60 text-base sm:text-lg leading-relaxed max-w-xl font-light">
               {product.description}
             </p>
+
+            {product.metrics && (
+              <div className="mt-8 md:mt-12 grid grid-cols-2 sm:grid-cols-3 gap-6">
+                {Object.entries(product.metrics).map(([key, value]) => {
+                  const label = key.replace(/([A-Z])/g, ' $1').trim().toUpperCase();
+                  return (
+                    <div key={key} className="flex flex-col border-l border-[#CC7778]/30 pl-4 relative group">
+                      <div className="absolute inset-y-0 left-[-1px] w-[2px] bg-[#CC7778] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-300" />
+                      <span className="text-[#CC7778] text-[9px] uppercase tracking-[0.2em] font-bold mb-1.5 leading-none">
+                        {label}
+                      </span>
+                      <span className="text-white/80 text-xs sm:text-sm font-medium leading-tight tracking-wide">
+                        {Array.isArray(value) ? value.join(' • ') : value}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
             
-            <div className="mt-10">
+            <div className="mt-10 md:mt-14">
               <Link href="/contact">
                 <Button className="!px-10 !py-5 text-base">
                   Request a Quote

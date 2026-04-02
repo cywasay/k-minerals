@@ -112,16 +112,27 @@ export default function Header() {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] bg-[#191619]/95 backdrop-blur-2xl border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 p-2"
                   >
-                    <div className="flex flex-col">
-                      {products.map((product) => (
-                        <Link
-                          key={product.slug}
-                          href={`/products/${product.slug}`}
-                          className="px-4 py-3 text-white/60 hover:text-[#CC7778] hover:bg-white/5 rounded-lg text-[11px] uppercase tracking-wider font-medium transition-all duration-300 border-b border-white/[0.03] last:border-0"
-                        >
-                          {product.title}
-                        </Link>
-                      ))}
+                    <div className="flex flex-col p-4 w-full md:w-[600px]">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {["Industrial Minerals & Salts", "Strategic & Precious Metals"].map((categoryName) => (
+                          <div key={categoryName} className="flex flex-col">
+                            <div className="text-[#CC7778] uppercase tracking-[0.2em] text-[10px] font-bold mb-3 pb-2 border-b border-white/10">
+                              {categoryName}
+                            </div>
+                            <div className="flex flex-col gap-1">
+                              {products.filter(p => p.category === categoryName).map((product) => (
+                                <Link
+                                  key={product.slug}
+                                  href={`/products/${product.slug}`}
+                                  className="px-2 py-2 text-white/60 hover:text-[#CC7778] hover:bg-white/5 rounded-lg text-[11px] uppercase tracking-wider font-medium transition-all duration-300"
+                                >
+                                  {product.title}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -208,22 +219,29 @@ export default function Header() {
                   <div className="h-[1px] w-6 bg-[#CC7778]/40" />
                   Our Products
                 </div>
-                <div className="grid grid-cols-1 gap-3">
-                  {products.map((product, idx) => (
-                    <motion.div
-                      key={product.slug}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 + idx * 0.05 }}
-                    >
-                      <Link
-                        href={`/products/${product.slug}`}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-white/60 hover:text-[#CC7778] text-sm uppercase tracking-widest font-medium py-2 block border-l border-white/5 pl-4 hover:border-[#CC7778]/50 transition-all"
-                      >
-                        {product.title}
-                      </Link>
-                    </motion.div>
+                <div className="grid grid-cols-1 gap-6">
+                  {["Industrial Minerals & Salts", "Strategic & Precious Metals"].map((categoryName, cIdx) => (
+                    <div key={categoryName} className="flex flex-col gap-2">
+                       <div className="text-white/40 uppercase tracking-[0.2em] text-[10px] font-bold mb-1">
+                          {categoryName}
+                       </div>
+                      {products.filter(p => p.category === categoryName).map((product, idx) => (
+                        <motion.div
+                          key={product.slug}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 + (idx * 0.05) }}
+                        >
+                          <Link
+                            href={`/products/${product.slug}`}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-white/60 hover:text-[#CC7778] text-sm uppercase tracking-widest font-medium py-2 block border-l border-white/5 pl-4 hover:border-[#CC7778]/50 transition-all"
+                          >
+                            {product.title}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
                   ))}
                 </div>
               </motion.div>

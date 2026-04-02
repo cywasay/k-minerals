@@ -31,44 +31,7 @@ const PawPrintIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><circle cx="9" cy="16" r="2"/><path d="M9 16c-1.1 0-2 .9-2 2 0 1.2.9 2.1 2.1 2.2a21 21 0 0 1 4.7 0c1.2 0 2.2-.9 2.2-2.1 0-1.1-.9-2.1-2.1-2.1H9Z"/></svg>
 );
 
-const highlights = [
-  {
-    title: "Industrial Salt",
-    description: "Bulk Himalayan salt supplied for chemical processing, tanning, and industrial manufacturing.",
-    icon: <FactoryIcon />,
-    slug: "industrial-salt"
-  },
-  {
-    title: "Edible Salt",
-    description: "Food-grade Himalayan pink salt available in fine, coarse, and crystal grades.",
-    icon: <UtensilsIcon />,
-    slug: "edible-pink-salt"
-  },
-  {
-    title: "Culinary Salt Products",
-    description: "Cooking slabs, salt bowls, and kitchen products used by chefs and hospitality brands.",
-    icon: <ChefHatIcon />,
-    slug: null
-  },
-  {
-    title: "Wellness Salt Products",
-    description: "Salt lamps, bath salt, and spa products designed for wellness environments.",
-    icon: <SparklesIcon />,
-    slug: "bath-and-wellness"
-  },
-  {
-    title: "Salt Tiles & Bricks",
-    description: "Natural Himalayan salt blocks used for interior design, spa rooms, and salt walls.",
-    icon: <LayoutGridIcon />,
-    slug: null
-  },
-  {
-    title: "Animal Salt Licks",
-    description: "Natural mineral salt blocks used for livestock nutrition and agricultural use.",
-    icon: <PawPrintIcon />,
-    slug: "animal-salt-licks"
-  },
-];
+import { products } from "@/constants/products";
 
 export default function ProductHighlights() {
   return (
@@ -102,47 +65,61 @@ export default function ProductHighlights() {
           </h2>
         </motion.div>
 
-        {/* Premium Dark Bento Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full max-w-6xl">
-          {highlights.map((item, idx) => {
-            const ElementContent = (
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={vp}
-                transition={{ ...smooth, delay: idx * 0.1 }}
-                className="group relative flex flex-col h-full p-4 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md z-10 overflow-hidden cursor-pointer hover:border-[#CC7778]/30 transition-all duration-500"
-              >
-                {/* Internal Card Glow on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
+        <div className="flex flex-col gap-16 w-full max-w-6xl">
+          {["Industrial Minerals & Salts", "Strategic & Precious Metals"].map((categoryName) => {
+            const categoryProducts = products.filter(p => p.category === categoryName);
+            if (categoryProducts.length === 0) return null;
 
-                {/* Icon + Accent Line */}
-                <div className="flex items-center justify-between mb-4 sm:mb-10">
-                  <div className="text-white/40 group-hover:text-[#CC7778] transition-colors duration-500">
-                    {item.icon}
-                  </div>
-                  <div className="h-[1px] w-8 sm:w-12 bg-white/10 group-hover:bg-[#CC7778]/40 transition-colors duration-500" />
+            return (
+              <div key={categoryName} className="flex flex-col">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent to-[#CC7778]/30" />
+                  <h3 className="text-sm md:text-lg text-[#CC7778] font-bold uppercase tracking-[0.2em]">{categoryName}</h3>
+                  <div className="h-[1px] flex-grow bg-gradient-to-l from-transparent to-[#CC7778]/30" />
                 </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                  {categoryProducts.map((item, idx) => {
+                    const ElementContent = (
+                      <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={vp}
+                        transition={{ ...smooth, delay: idx * 0.1 }}
+                        className="group relative flex flex-col h-full p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md z-10 overflow-hidden cursor-pointer hover:border-[#CC7778]/30 transition-all duration-500"
+                      >
+                        {/* Internal Card Glow on Hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#CC7778]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
 
-                {/* Text Area */}
-                <div className="mt-auto">
-                  <h3 className="text-sm sm:text-lg md:text-xl text-white font-semibold uppercase tracking-wider mb-1 sm:mb-2 group-hover:-translate-y-1 transition-transform duration-500">
-                    {item.title}
-                  </h3>
-                  <p className="text-[#a1a1aa] font-light text-[10px] sm:text-sm leading-tight sm:leading-[1.6] group-hover:text-white/90 transition-colors duration-500">
-                    {item.description}
-                  </p>
+                        {/* Top Accent Line */}
+                        <div className="mb-4 sm:mb-8">
+                          <div className="h-[2px] w-12 bg-white/10 group-hover:bg-[#CC7778] transition-colors duration-500 origin-left scale-x-50 group-hover:scale-x-100" />
+                        </div>
+
+                        {/* Text Area */}
+                        <div className="mt-auto flex flex-col">
+                          <span className="text-white/30 text-[9px] uppercase tracking-widest font-bold mb-2">{item.subtitle || "Premium Grade"}</span>
+                          <h3 className="text-base sm:text-xl md:text-2xl text-white font-semibold uppercase tracking-wider mb-2 group-hover:-translate-y-1 transition-transform duration-500">
+                            {item.title}
+                          </h3>
+                          <p className="text-[#a1a1aa] font-light text-xs sm:text-sm leading-tight sm:leading-relaxed group-hover:text-white/90 transition-colors duration-500 line-clamp-3">
+                            {item.description}
+                          </p>
+                        </div>
+                      </motion.div>
+                    );
+
+                    return item.slug ? (
+                      <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
+                        {ElementContent}
+                      </Link>
+                    ) : (
+                      <div key={idx} className="block h-full">
+                        {ElementContent}
+                      </div>
+                    );
+                  })}
                 </div>
-              </motion.div>
-            );
-
-            return item.slug ? (
-              <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
-                {ElementContent}
-              </Link>
-            ) : (
-              <div key={idx} className="block h-full">
-                {ElementContent}
               </div>
             );
           })}

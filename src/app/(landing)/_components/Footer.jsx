@@ -103,6 +103,24 @@ export default function Footer() {
                 </a>
               </p>
             </div>
+
+            <h4 className="text-white font-semibold uppercase tracking-widest text-xs mt-2">
+              Global Offices
+            </h4>
+            <div className="flex flex-col gap-3 text-sm font-light text-white/40">
+              <div>
+                <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold block mb-0.5">US Office</span>
+                Houston, Texas, USA
+              </div>
+              <div>
+                <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold block mb-0.5">UAE Office</span>
+                Dubai, UAE
+              </div>
+              <div>
+                <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold block mb-0.5">PK Office</span>
+                ISB, PK & Karachi, PK
+              </div>
+            </div>
           </div>
         </div>
 

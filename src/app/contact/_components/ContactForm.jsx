@@ -131,11 +131,34 @@ export default function ContactForm() {
               <div className="flex flex-col">
                 <p className="text-white/40 text-[9px] uppercase tracking-widest mb-1">Customer Support</p>
                 <div className="flex items-center gap-2">
-                  <span className="text-lg">📧</span>
                   <a href="mailto:support@kohistanminerals.com" className="text-base sm:text-lg font-medium font-mono hover:text-[#CC7778] transition-colors break-all">
                     support@kohistanminerals.com
                   </a>
                 </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp}
+            transition={{ ...smooth, delay: 0.3 }}
+            className="p-6 rounded-2xl bg-[#CC7778]/5 border border-[#CC7778]/10 backdrop-blur-sm"
+          >
+            <h4 className="text-[#CC7778] text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Global Offices</h4>
+            <div className="flex flex-col gap-5 text-white">
+              <div className="flex flex-col">
+                <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold mb-1">US Office</span>
+                <span className="text-white/80 text-sm font-medium">Houston, Texas, USA</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold mb-1">UAE Office</span>
+                <span className="text-white/80 text-sm font-medium">Dubai, UAE</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold mb-1">PK Office</span>
+                <span className="text-white/80 text-sm font-medium">ISB, PK & Karachi, PK</span>
               </div>
             </div>
           </motion.div>

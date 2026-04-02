@@ -84,18 +84,24 @@ export default function ProductDetailPage({ params: paramsPromise }) {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
+            initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ ...smooth, delay: 0.2 }}
-            className="relative h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center p-8 sm:p-12"
+            className={`relative w-full w-full h-[350px] sm:h-[450px] md:h-[550px] flex items-center justify-center ${
+              product.image.endsWith(".png") ? "p-8 sm:p-12" : "rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            }`}
           >
-            <div className="absolute inset-0 bg-[#CC7778]/5 rounded-3xl blur-3xl" />
+            <div className="absolute inset-0 bg-[#CC7778]/5 blur-3xl" />
             <div className="relative w-full h-full">
               <Image
                 src={product.image}
                 alt={product.title}
                 fill
-                className="object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]"
+                className={
+                  product.image.endsWith(".png") 
+                  ? "object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]" 
+                  : "object-cover hover:scale-105 transition-transform duration-1000"
+                }
                 priority
               />
             </div>

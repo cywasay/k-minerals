@@ -187,17 +187,17 @@ export default function ProductDetailPage({ params: paramsPromise }) {
                 <Image 
                   src={
                     {
-                      'gold': '/rare-earth-individual-sections/gold1.jpeg',
-                      'silver': '/rare-earth-individual-sections/silver1.jpeg',
-                      'copper': '/rare-earth-individual-sections/copper1.jpeg',
-                      'iron': '/rare-earth-individual-sections/iron1.jpeg',
-                      'antimony': '/rare-earth-individual-sections/antimony1.jpeg',
-                      'bath-and-wellness': '/bath_supply.jpg',
-                      'edible-pink-salt': '/edible_supply.jpg',
-                      'animal-salt-licks': '/animal_supply.jpg',
-                      'bulk-minerals': '/bulk_supply.jpg',
-                      'industrial-salt': '/industrial_supply.jpg'
-                    }[product.slug] || '/supply_format.png'
+                      'gold': '/assets/rare-earth/individual-sections/gold1.jpeg',
+                      'silver': '/assets/rare-earth/individual-sections/silver1.jpeg',
+                      'copper': '/assets/rare-earth/individual-sections/copper1.jpeg',
+                      'iron': '/assets/rare-earth/individual-sections/iron1.jpeg',
+                      'antimony': '/assets/rare-earth/individual-sections/antimony1.jpeg',
+                      'bath-and-wellness': '/assets/products/sections/bath_supply.jpg',
+                      'edible-pink-salt': '/assets/products/sections/edible_supply.jpg',
+                      'animal-salt-licks': '/assets/products/sections/animal_supply.jpg',
+                      'bulk-minerals': '/assets/products/sections/bulk_supply.jpg',
+                      'industrial-salt': '/assets/products/sections/industrial_supply.jpg'
+                    }[product.slug] || '/assets/products/sections/supply_format.png'
                   }
                   alt="Product Specification" 
                   fill 
@@ -231,26 +231,6 @@ export default function ProductDetailPage({ params: paramsPromise }) {
         </div>
       </section>
 
-      {/* Product Profile Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={vp}
-            transition={{ ...smooth }}
-            className="max-w-4xl"
-          >
-            <div className="text-[#CC7778] uppercase tracking-[0.4em] text-xs font-bold mb-8">Product Profile</div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-10 leading-[1.1]">
-              Engineered for consistency across every supply.
-            </h2>
-            <p className="text-white/50 text-base sm:text-xl font-light italic leading-relaxed">
-              &quot;{product.profile}&quot;
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Redesigned Business Inquiry CTA - Fully Mobile Optimized */}
       <section className="py-24 sm:py-48 px-4 sm:px-6 relative overflow-hidden bg-[#191619]">

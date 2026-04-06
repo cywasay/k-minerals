@@ -11,7 +11,7 @@ export default function AboutHero() {
       {/* Background Image Banner */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/about us banner.webp"
+          src="/assets/banners/about us banner.webp"
           alt="Kohistan Mountains"
           fill
           className="object-cover object-center"

@@ -8,37 +8,37 @@ const specialties = [
   {
     title: "Kohistan Pink Salt",
     desc: "Premium Himalayan pink salt for culinary and wellness uses, naturally rich in minerals.",
-    image: "/pink-salt.png",
+    image: "/assets/products/pngs/pink-salt.png",
     slug: "edible-pink-salt"
   },
   {
     title: "Red Salt",
     desc: "Mineral-rich Himalayan salt ideal for cooking, spa, and wellness applications.",
-    image: "/red-salt-crystal.png",
+    image: "/assets/products/pngs/red-salt-crystal.png",
     slug: null
   },
   {
     title: "White Crystal Salt",
     desc: "Pure, versatile salt suitable for culinary, decorative, and industrial purposes.",
-    image: "/white-salt.png",
+    image: "/assets/products/pngs/white-salt.png",
     slug: "industrial-salt"
   },
   {
     title: "Black Salt",
     desc: "Specialty salt for gourmet cooking, health-focused recipes, and wellness products.",
-    image: "/black-salt.png",
+    image: "/assets/products/pngs/black-salt.png",
     slug: null
   },
   {
     title: "Animal Salt Licks",
     desc: "Natural mineral salt blocks for livestock nutrition and agricultural use.",
-    image: "/lick-salt.png",
+    image: "/assets/products/pngs/lick-salt.png",
     slug: "animal-salt-licks"
   },
   {
     title: "Bath & Wellness Salts",
     desc: "Salt lamps, bath salts, and spa products designed for relaxation and wellness environments.",
-    image: "/bath-salt.png",
+    image: "/assets/products/pngs/bath-salt.png",
     slug: "bath-and-wellness"
   }
 ];

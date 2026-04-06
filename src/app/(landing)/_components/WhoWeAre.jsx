@@ -109,7 +109,7 @@ export default function WhoWeAre() {
 
           <div className="relative w-full h-full drop-shadow-2xl">
             <Image
-              src="/who-we-are.jpg"
+              src="/assets/about/who-we-are.jpg"
               alt="Himalayan Salt Mine Interior"
               fill
               className="object-cover object-center rounded-2xl"

@@ -22,7 +22,7 @@ export default function Hero() {
           className="relative w-full md:w-[60%] lg:w-[60%] h-[85vh] lg:h-[90vh] -ml-12 lg:-ml-20 mt-0 flex items-center justify-center will-change-[transform,opacity]"
         >
           <Image
-            src="/hero-salt.png"
+            src="/assets/products/pngs/hero-salt.png"
             alt="Glowing Mineral Rock"
             fill
             className="object-contain object-center drop-shadow-2xl scale-[115%] lg:scale-[125%]"

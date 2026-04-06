@@ -42,7 +42,7 @@ export const products = [
       "Structured supply capability",
       "Aligned with industrial requirements"
     ],
-    image: "/white-salt.png",
+    image: "/assets/products/pngs/white-salt.png",
     bgAccent: "rgba(255, 255, 255, 0.05)"
   },
   {
@@ -86,7 +86,7 @@ export const products = [
       "Flexible supply options",
       "Prepared for international markets"
     ],
-    image: "/pink-salt.png",
+    image: "/assets/products/pngs/pink-salt.png",
     bgAccent: "rgba(204, 119, 120, 0.1)"
   },
   {
@@ -130,7 +130,7 @@ export const products = [
       "Flexible supply options",
       "Prepared for global distribution"
     ],
-    image: "/bath-salt.png",
+    image: "/assets/products/pngs/bath-salt.png",
     bgAccent: "rgba(204, 119, 120, 0.08)"
   },
   {
@@ -173,7 +173,7 @@ export const products = [
       "Long-lasting product form",
       "Reliable supply for agricultural needs"
     ],
-    image: "/lick-salt.png",
+    image: "/assets/products/pngs/lick-salt.png",
     bgAccent: "rgba(161, 161, 170, 0.1)"
   },
   {
@@ -217,7 +217,7 @@ export const products = [
       "Large volume supply with minimal handling issues",
       "Trusted source for high-demand operations"
     ],
-    image: "/white-salt.png",
+    image: "/assets/products/pngs/white-salt.png",
     bgAccent: "rgba(255, 255, 255, 0.03)"
   },
   // CATEGORY 2: Strategic & Precious Metals
@@ -264,7 +264,7 @@ export const products = [
       "Optimal geographical presence",
       "Compliant with international standards"
     ],
-    image: "/rare-earth/copper.jpg",
+    image: "/assets/rare-earth/hero/copper.jpg",
     bgAccent: "rgba(184, 115, 51, 0.15)"
   },
   {
@@ -310,7 +310,7 @@ export const products = [
       "Robust processing framework",
       "Trusted international supply"
     ],
-    image: "/rare-earth/silver.jpg",
+    image: "/assets/rare-earth/hero/silver.jpg",
     bgAccent: "rgba(192, 192, 192, 0.15)"
   },
   {
@@ -356,7 +356,7 @@ export const products = [
       "Highest standard asset protection",
       "Aligned with global market regulations"
     ],
-    image: "/rare-earth/Gold-ore-in-bulk.jpg",
+    image: "/assets/rare-earth/hero/Gold-ore-in-bulk.jpg",
     bgAccent: "rgba(255, 215, 0, 0.1)"
   },
   {
@@ -402,7 +402,7 @@ export const products = [
       "Rapid deployment supply chains",
       "Ideal for megaprojects"
     ],
-    image: "/rare-earth/iron.jpg",
+    image: "/assets/rare-earth/hero/iron.jpg",
     bgAccent: "rgba(161, 157, 148, 0.15)"
   },
   {
@@ -448,7 +448,7 @@ export const products = [
       "Dedicated 500-TON daily processing",
       "Consistent 70% concentration support"
     ],
-    image: "/rare-earth/Antimony.jpg",
+    image: "/assets/rare-earth/hero/Antimony.jpg",
     bgAccent: "rgba(130, 137, 143, 0.15)"
   }
 ];

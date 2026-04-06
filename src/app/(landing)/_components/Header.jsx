@@ -55,7 +55,7 @@ export default function Header() {
           <div className="relative w-16 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24">
             {/* Desktop Logo */}
             <Image 
-              src="/logo.png" 
+              src="/assets/branding/logo.png" 
               alt="Kohistan Minerals Logo" 
               fill
               className="object-contain hidden sm:block"
@@ -63,7 +63,7 @@ export default function Header() {
             />
             {/* Mobile Logo (Mountains) */}
             <Image 
-              src="/mobile_logo.png" 
+              src="/assets/branding/mobile_logo.png" 
               alt="Kohistan Minerals Mobile Logo" 
               fill
               className="object-contain object-left block sm:hidden scale-[2.5] origin-left"

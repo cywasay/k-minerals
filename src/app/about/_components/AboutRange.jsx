@@ -12,22 +12,22 @@ const categories = [
   {
     title: "Culinary Salts",
     desc: "Himalayan Pink Salt, Red Salt, White Crystal Salt, and Black Salt, carefully graded for gourmet kitchens and fine dining.",
-    image: "/culinary.png"
+    image: "/assets/products/pngs/culinary.png"
   },
   {
     title: "Wellness Minerals",
     desc: "Premium bath salts, natural salt lamps, and detoxifying spa products designed for ultimate relaxation and wellbeing.",
-    image: "/wellness.png"
+    image: "/assets/products/pngs/wellness.png"
   },
   {
     title: "Animal Nutrition",
     desc: "Mineral-rich salt licks that naturally support livestock health, optimal hydration, and overall animal productivity.",
-    image: "/lick-salt.png"
+    image: "/assets/products/pngs/lick-salt.png"
   },
   {
     title: "Industrial Minerals",
     desc: "Raw and processed specialized salts tailored for manufacturing, chemical processes, and large-scale industrial use.",
-    image: "/hero-salt.png"
+    image: "/assets/products/pngs/hero-salt.png"
   }
 ];
 

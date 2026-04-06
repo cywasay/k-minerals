@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div className="relative w-32 h-16">
               <Image
-                src="/logo.png"
+                src="/assets/branding/logo.png"
                 alt="Kohistan Minerals"
                 fill
                 className="object-contain object-left"

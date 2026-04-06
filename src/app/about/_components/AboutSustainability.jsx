@@ -25,7 +25,7 @@ export default function AboutSustainability() {
           <div className="absolute inset-0 bg-[#CC7778]/10 rounded-full blur-[100px] pointer-events-none" />
           <div className="relative w-full h-full overflow-hidden rounded-[40px] shadow-2xl">
             <Image
-              src="/sustainability.jpg"
+              src="/assets/about/sustainability.jpg"
               alt="Sustainability in Kohistan"
               fill
               className="object-cover"

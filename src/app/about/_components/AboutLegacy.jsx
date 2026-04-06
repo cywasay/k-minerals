@@ -22,7 +22,7 @@ export default function AboutLegacy() {
         >
           <div className="relative w-full h-full overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src="/our-heritage.jpg"
+              src="/assets/about/our-heritage.jpg"
               alt="Kohistan Mountains"
               fill
               className="object-cover"

@@ -13,25 +13,25 @@ const features = [
     num: "01",
     label: "Expertise",
     text: "Decades of expertise in Himalayan mineral extraction.",
-    image: "/expertise.jpg",
+    image: "/assets/about/expertise.jpg",
   },
   {
     num: "02",
     label: "Quality",
     text: "Strict quality control and grading for global standards.",
-    image: "/quality.jpg",
+    image: "/assets/about/quality.jpg",
   },
   {
     num: "03",
     label: "Ethics",
     text: "Ethically sourced and environmentally responsible.",
-    image: "/ethics_salt.png",
+    image: "/assets/about/ethics_salt.png",
   },
   {
     num: "04",
     label: "Reach",
     text: "Trusted by chefs, wellness brands, farmers, and industries worldwide.",
-    image: "/reach_salt.png",
+    image: "/assets/about/reach_salt.png",
   },
 ];
 

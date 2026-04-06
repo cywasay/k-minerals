@@ -8,31 +8,31 @@ const rareMinerals = [
   {
     title: "Gold",
     desc: "Exceptional 99.99% purity gold sourced from high-yield mining tracts for global markets.",
-    image: "/rare-earth-pngs/gold.png",
+    image: "/assets/rare-earth/pngs/gold.png",
     slug: "gold"
   },
   {
     title: "Silver",
     desc: "Refined high-conductivity silver, meticulously processed for industrial and precious uses.",
-    image: "/rare-earth-pngs/silver.png",
+    image: "/assets/rare-earth/pngs/silver.png",
     slug: "silver"
   },
   {
     title: "Copper",
     desc: "High-grade copper ore essential for global electrical infrastructure and modern manufacturing.",
-    image: "/rare-earth-pngs/copper.png",
+    image: "/assets/rare-earth/pngs/copper.png",
     slug: "copper"
   },
   {
     title: "Iron",
     desc: "Industry-leading 65% yield iron ore, the backbone of structural growth and heavy industry.",
-    image: "/rare-earth-pngs/iron.png",
+    image: "/assets/rare-earth/pngs/iron.png",
     slug: "iron"
   },
   {
     title: "Antimony",
     desc: "A vital strategic mineral for advanced batteries, microelectronics, and flame retardants.",
-    image: "/rare-earth-pngs/antimony.png",
+    image: "/assets/rare-earth/pngs/antimony.png",
     slug: "antimony"
   }
 ];

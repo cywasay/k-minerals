@@ -54,7 +54,7 @@ export default function RareEarthMinerals() {
             </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:grid-cols-5 lg:gap-10">
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-10">
           {rareMinerals.map((item, idx) => {
             const CardContent = (
               <motion.div
@@ -95,11 +95,11 @@ export default function RareEarthMinerals() {
             );
 
             return item.slug ? (
-              <Link key={idx} href={`/products/${item.slug}`} className="block">
+              <Link key={idx} href={`/products/${item.slug}`} className="block w-[calc(50%-16px)] sm:w-[calc(33.333%-27px)] lg:w-[calc(20%-32px)]">
                 {CardContent}
               </Link>
             ) : (
-              <div key={idx} className="block">
+              <div key={idx} className="block w-[calc(50%-16px)] sm:w-[calc(33.333%-27px)] lg:w-[calc(20%-32px)]">
                 {CardContent}
               </div>
             );

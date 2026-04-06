@@ -78,7 +78,7 @@ export default function ProductHighlights() {
                   <div className="h-[1px] flex-grow bg-gradient-to-l from-transparent to-[#CC7778]/30" />
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
                   {categoryProducts.map((item, idx) => {
                     const ElementContent = (
                       <motion.div
@@ -110,11 +110,11 @@ export default function ProductHighlights() {
                     );
 
                     return item.slug ? (
-                      <Link key={idx} href={`/products/${item.slug}`} className="block h-full">
+                      <Link key={idx} href={`/products/${item.slug}`} className="block w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                         {ElementContent}
                       </Link>
                     ) : (
-                      <div key={idx} className="block h-full">
+                      <div key={idx} className="block w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                         {ElementContent}
                       </div>
                     );

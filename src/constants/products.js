@@ -448,7 +448,7 @@ export const products = [
       "Dedicated 500-TON daily processing",
       "Consistent 70% concentration support"
     ],
-    image: "/industrial_supply.jpg",
+    image: "/rare-earth/Antimony.jpg",
     bgAccent: "rgba(130, 137, 143, 0.15)"
   }
 ];

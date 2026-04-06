@@ -173,8 +173,7 @@ export default function ProductDetailPage({ params: paramsPromise }) {
           </div>
 
           <div className="mt-24 sm:mt-40 pt-16 sm:pt-24 border-t border-white/5 space-y-20 lg:space-y-32">
-            
-            {/* Supply Format Row */}
+                       {/* Supply Format & Source Quality Row */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
               <motion.div 
                 initial={{ opacity: 0, x: -30 }}
@@ -188,6 +187,11 @@ export default function ProductDetailPage({ params: paramsPromise }) {
                 <Image 
                   src={
                     {
+                      'gold': '/rare-earth-individual-sections/gold1.jpeg',
+                      'silver': '/rare-earth-individual-sections/silver1.jpeg',
+                      'copper': '/rare-earth-individual-sections/copper1.jpeg',
+                      'iron': '/rare-earth-individual-sections/iron1.jpeg',
+                      'antimony': '/rare-earth-individual-sections/antimony1.jpeg',
                       'bath-and-wellness': '/bath_supply.jpg',
                       'edible-pink-salt': '/edible_supply.jpg',
                       'animal-salt-licks': '/animal_supply.jpg',
@@ -195,7 +199,7 @@ export default function ProductDetailPage({ params: paramsPromise }) {
                       'industrial-salt': '/industrial_supply.jpg'
                     }[product.slug] || '/supply_format.png'
                   }
-                  alt="Supply Format Concept" 
+                  alt="Product Specification" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
@@ -210,69 +214,16 @@ export default function ProductDetailPage({ params: paramsPromise }) {
               >
                 <div className="flex items-center gap-4 mb-10">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#CC7778] shadow-[0_0_10px_rgba(204,119,120,0.8)]" />
-                  <h3 className="text-sm sm:text-base text-white font-bold uppercase tracking-[0.2em] leading-tight">Supply Format & Capability</h3>
+                  <h3 className="text-sm sm:text-base text-white font-bold uppercase tracking-[0.2em] leading-tight">Supply & Efficiency</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  {product.supplyFormat.map((format, idx) => (
+                  {[...product.supplyFormat, ...product.whyWorks].map((item, idx) => (
                     <div key={idx} className="flex flex-col relative pl-6 before:absolute before:left-0 before:top-1 before:bottom-1 before:w-[2px] before:bg-white/10 hover:before:bg-[#CC7778]/70 before:transition-colors before:duration-500">
                       <span className="text-[#CC7778] text-[10px] uppercase tracking-widest font-bold mb-2">Spec {(idx + 1).toString().padStart(2, '0')}</span>
-                      <p className="text-white/80 text-sm font-light leading-relaxed">{format}</p>
+                      <p className="text-white/80 text-sm font-light leading-relaxed">{item}</p>
                     </div>
                   ))}
                 </div>
-              </motion.div>
-            </div>
-
-            {/* Source Efficiency Row */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={vp}
-                transition={{ ...smooth }}
-                className="flex flex-col order-2 lg:order-1"
-              >
-                <div className="flex items-center gap-4 mb-10">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#CC7778] shadow-[0_0_10px_rgba(204,119,120,0.8)]" />
-                  <h3 className="text-sm sm:text-base text-white font-bold uppercase tracking-[0.2em] leading-tight">Source Quality & Efficiency</h3>
-                </div>
-                <div className="grid grid-cols-1 gap-2">
-                  {product.whyWorks.map((reason, idx) => (
-                    <div key={idx} className="group flex items-center gap-6 p-4 rounded-2xl hover:bg-white/[0.02] transition-colors duration-500 border border-transparent hover:border-white/[0.05]">
-                      <div className="text-2xl sm:text-3xl font-black text-white/5 group-hover:text-[#CC7778]/40 transition-colors duration-500 italic">
-                        {(idx + 1).toString().padStart(2, '0')}
-                      </div>
-                      <p className="text-white/50 text-sm font-light leading-relaxed group-hover:text-white transition-colors duration-300">
-                        {reason}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={vp}
-                transition={{ ...smooth, delay: 0.15 }}
-                className="relative h-[400px] sm:h-[500px] w-full rounded-3xl overflow-hidden border border-white/10 group shadow-2xl order-1 lg:order-2"
-              >
-                <div className="absolute inset-0 bg-[#CC7778]/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#191619] via-transparent to-transparent z-10 opacity-60" />
-                <Image 
-                  src={
-                    {
-                      'bath-and-wellness': '/bath_source.png',
-                      'edible-pink-salt': '/edible_source.jpg',
-                      'animal-salt-licks': '/animal_source.jpg',
-                      'bulk-minerals': '/bulk_source.jpg',
-                      'industrial-salt': '/industrial_source.jpg'
-                    }[product.slug] || '/source_efficiency.png'
-                  }
-                  alt="Source Efficiency Concept" 
-                  fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
               </motion.div>
             </div>
             

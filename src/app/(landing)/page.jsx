@@ -2,6 +2,7 @@ import Header from "./_components/Header";
 import Hero from "./_components/Hero";
 import Intro from "./_components/Intro";
 import Specialties from "./_components/Specialties";
+import RareEarthMinerals from "./_components/RareEarthMinerals";
 import Processes from "./_components/Processes";
 import WhoWeAre from "./_components/WhoWeAre";
 import WhyChooseUs from "./_components/WhyChooseUs";
@@ -17,6 +18,7 @@ export default function LandingPage() {
       <Hero />
       <Intro />
       <Specialties />
+      <RareEarthMinerals />
       <Processes />
       <ProductHighlights />
       <WhoWeAre />

@@ -125,9 +125,9 @@ export default function GlobalOperations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={vp}
             transition={{ ...smooth, delay: 0.2 }}
-            className="flex flex-col gap-3 text-right shrink-0"
+            className="flex flex-col gap-3 text-left lg:text-right shrink-0"
           >
-            <div className="flex items-center gap-3 lg:justify-end">
+            <div className="flex items-center gap-3 justify-start lg:justify-end">
               <div className="h-[1px] w-4 bg-[#CC7778]/40" />
               <span className="text-[#CC7778] uppercase tracking-[0.2em] text-[10px] sm:text-xs font-semibold">
                 Head Office (USA)

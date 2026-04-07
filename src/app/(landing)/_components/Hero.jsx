@@ -40,7 +40,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...smooth, delay: 0.25 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.3em] uppercase text-[#CC7778] relative z-20 will-change-transform"
+              className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.3em] uppercase text-[#CC7778] relative z-20 will-change-transform"
             >
               Pristine
             </motion.h2>
@@ -49,7 +49,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ ...smooth, delay: 0.35 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none uppercase text-white -mb-[0.05em] relative z-20 drop-shadow-md will-change-transform"
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none uppercase text-white -mb-[0.05em] relative z-20 drop-shadow-md will-change-transform"
               >
                 Kohistan
               </motion.h1>
@@ -70,7 +70,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ ...smooth, delay: 1.1 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none uppercase text-[#191619] pt-1 relative z-20 will-change-transform"
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none uppercase text-[#191619] pt-1 relative z-20 will-change-transform"
               >
                 Minerals
               </motion.h1>

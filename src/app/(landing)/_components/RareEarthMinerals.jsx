@@ -39,7 +39,7 @@ const rareMinerals = [
 
 export default function RareEarthMinerals() {
   return (
-    <section className="bg-[#191619] pb-16 sm:pb-20 w-full relative overflow-hidden">
+    <section id="rare-minerals" className="bg-[#191619] pb-16 sm:pb-20 w-full relative overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
         <div className="flex flex-col items-center mb-10 sm:mb-14 text-center">
              <div className="flex items-center gap-4 mb-3">

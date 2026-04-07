@@ -45,7 +45,7 @@ const specialties = [
 
 export default function Specialties() {
   return (
-    <section className="bg-[#191619] py-12 w-full">
+    <section id="minerals" className="bg-[#191619] py-12 w-full scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-10 lg:grid-cols-3 lg:gap-14">
           {specialties.map((item, idx) => {

@@ -25,7 +25,7 @@ const sections = [
 
 export default function Processes() {
   return (
-    <div className="w-full flex flex-col">
+    <div id="process" className="w-full flex flex-col scroll-mt-24">
       {sections.map((section, idx) => {
         const isLeft = section.imageSide === "left";
 

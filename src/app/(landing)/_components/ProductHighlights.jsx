@@ -35,7 +35,7 @@ import { products } from "@/constants/products";
 
 export default function ProductHighlights() {
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden z-10 flex min-h-[85vh] sm:min-h-[90vh] items-center">
+    <section id="capabilities" className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden z-10 flex min-h-[85vh] sm:min-h-[90vh] items-center scroll-mt-24">
       {/* Subtle Abstract Background Glows */}
       <div
         className="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#CC7778]/30 rounded-full blur-[120px] md:blur-[180px] pointer-events-none -z-10 opacity-15"

@@ -99,7 +99,7 @@ export default function AboutRange() {
         </div>
 
         <div className="flex justify-center">
-          <Link href="/contact">
+          <Link href="/#capabilities">
             <Button className="!px-10 !py-4 !text-sm">Explore Our Full Range</Button>
           </Link>
         </div>

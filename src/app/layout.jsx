@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
+import ScrollToHash from "@/components/ScrollToHash";
 
 const metropolis = localFont({
   src: [
@@ -41,6 +43,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={metropolis.variable}>
       <body className="font-sans antialiased">
+        <Suspense fallback={null}>
+          <ScrollToHash />
+        </Suspense>
         {children}
       </body>
     </html>

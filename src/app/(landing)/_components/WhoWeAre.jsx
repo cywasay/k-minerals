@@ -29,7 +29,7 @@ const commitments = [
 
 export default function WhoWeAre() {
   return (
-    <section className="relative w-full py-12 sm:py-16 md:py-20 overflow-visible z-10 flex min-h-[85vh] sm:min-h-[90vh] items-center">
+    <section id="about" className="relative w-full py-12 sm:py-16 md:py-20 overflow-visible z-10 flex min-h-[85vh] sm:min-h-[90vh] items-center scroll-mt-24">
       {/* Abstract Glow */}
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[#CC7778]/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 -z-10" />
 
@@ -90,7 +90,7 @@ export default function WhoWeAre() {
             viewport={vp}
             transition={{ ...smooth, delay: 0.6 }}
           >
-            <Link href="/contact">
+            <Link href="/about">
               <Button>Explore Our Story</Button>
             </Link>
           </motion.div>
